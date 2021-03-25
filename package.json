@@ -1,0 +1,16 @@
+{
+  "name": "@mx-inventor/synup",
+  "version": "1.0.0",
+  "description": "Synup API for nodejs",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mx-inventor/synup.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
