@@ -1,16 +1,26 @@
 {
   "name": "@mx-inventor/synup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Synup API for nodejs",
   "main": "index.js",
-  "scripts": {},
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "postbuild": "copyfiles -u 1 \"src/**/*.d.ts\" dist"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/mx-inventor/synup.git"
   },
-  "author": "",
+  "author": "Alberto Casas",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.2.3"
   }
 }
