@@ -6,5 +6,8 @@ exports.default = (function (axios) {
         create: function (data) {
             return axios.post(endpoint, data);
         },
+        getAllLocations: function (params) {
+            return axios.get(endpoint, { params: params });
+        },
     };
 });

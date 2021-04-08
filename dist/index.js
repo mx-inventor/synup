@@ -7,7 +7,7 @@ module.exports = function (apiKey) {
     if (apiKey) {
         _axios = axios_1.default.create({
             baseURL: baseURL,
-            headers: { Authorization: apiKey },
+            headers: { Authorization: "API " + apiKey },
         });
     }
     return {

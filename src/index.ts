@@ -9,7 +9,7 @@ export = (apiKey: string) => {
   if (apiKey) {
     _axios = axios.create({
       baseURL,
-      headers: { Authorization: apiKey },
+      headers: { Authorization: `API ${apiKey}` },
     });
   }
 

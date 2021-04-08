@@ -32,3 +32,10 @@ export type Location = {
   tenure?: string; //TODO: consider enum
   databaseId?: number;
 };
+
+export type GetAllLocationsParams = {
+  after?: any; //TODO: define
+  before?: any; //TODO: define
+  first?: any;
+  last?: any;
+};
