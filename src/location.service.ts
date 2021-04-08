@@ -1,12 +1,12 @@
 import { AxiosInstance } from "axios";
-import { GetAllLocationsParams, Location } from "./types/location";
+import { CreateLocationParams, GetAllLocationsParams } from "./types/location";
 
 const endpoint = "locations";
 
 export default (axios: AxiosInstance) => {
   return {
-    create: (data: Location) => {
-      return axios.post(endpoint, data);
+    create: (params: CreateLocationParams) => {
+      return axios.post(endpoint, params);
     },
     getAllLocations: (params: GetAllLocationsParams) => {
       return axios.get(endpoint, { params });
