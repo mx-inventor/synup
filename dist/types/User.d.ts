@@ -16,3 +16,7 @@ export type User = {
     archived?: boolean;
 
 }
+
+export type createUserWithRole = {
+    input: User;
+}

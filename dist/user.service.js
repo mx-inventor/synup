@@ -1,10 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var endpoint = "roles";
+var endpointRoles = "roles";
+var endpointUsers = "users";
 exports.default = (function (axios) {
     return {
         getAllUsersRoles: function (params) {
-            return axios.get(endpoint, { params: params });
+            return axios.get(endpointRoles, { params: params });
+        },
+        createUserWithRole: function (params) {
+            return axios.post(endpointUsers, { params: params });
         }
     };
 });

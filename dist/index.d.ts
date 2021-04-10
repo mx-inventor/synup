@@ -6,6 +6,7 @@ declare const _default: (apiKey: string) => {
     };
     user: {
         getAllUsersRoles: (params: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
+        createUserWithRole: (params: import("./types/User").createUserWithRole) => Promise<import("axios").AxiosResponse<any>>;
     };
     _axios: AxiosInstance;
 };
