@@ -1,7 +1,8 @@
 const synup = require("../dist/index")(process.env.SYNUP_KEY);
 
 const { Interactions } = synup;
-let id; 
+let locationId; 
+
 
 Interactions.getInteractions(locationId)
   .then((response) => {
@@ -12,3 +13,14 @@ Interactions.getInteractions(locationId)
     console.log(error);
     console.log("FAILURE");
   });
+
+Interactions.getInteractionById()
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    console.log("SUCCESS");
+  })
+  .catch((error) => {
+    console.log(error);
+    console.log("FAILURE");
+  });
+
