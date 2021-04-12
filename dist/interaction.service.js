@@ -1,11 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var endpoint = 'locations/';
-//"TG9jYXRpb246MTI2NzE5"
+var endpoint = 'locations';
+//"TG9jYXRpb246MTI2NzE5" id del ejemplo del api
+//"TWVkaWFGaWxlOjEzMDMzMg==" id de locations
 exports.default = (function (axios) {
     return {
-        getInteractions: function (id, params) {
-            return axios.get(endpoint + "TWVkaWFGaWxlOjEzMDMzMg==" + "/reviews", { params: params });
+        getInteractions: function (locationId, params) {
+            return axios.get(endpoint + "/" + locationId + "/reviews", { params: params });
         },
+        getInteractionById: function (params) {
+            return axios.get(endpoint + "/reviewDetails", { params: params });
+        }
     };
 });

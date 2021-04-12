@@ -23,7 +23,7 @@ export type PageInfo ={
 }
 
 export type Node ={
-    id?: string,
+    id?: string, //interaction Id
     source?: string,
     title?: string,
     content?: string,
