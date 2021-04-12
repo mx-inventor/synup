@@ -60,6 +60,18 @@ export type Responses ={
     responseStatus?: string
 }
 
-// export type ListInteractions ={
-//     data: Interactions,
-// }
+export type RespondInteraction ={
+    interactionid?: string,
+    responseContent?: string
+}
+
+//type to respond to an interaction
+export type Interaction ={
+    interactionId?: string,
+    source?: string,
+    content?: string,
+    authorName?: string,
+    authorAvatar?: string,
+    date?: string,
+    interactionStatus?: string
+}
