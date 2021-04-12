@@ -15,6 +15,9 @@ export default (axios: AxiosInstance) => {
     },
     respondToAnInteraction:(params:RespondInteraction)=>{
       return axios.post(`${endpoint}/reviews/respond`,{params});
-    }
+    },
+    getListOfInteractionSources:(locationId:any,params:InteractionParams)=>{
+      return axios.get(`${endpoint}/${locationId}/reviews/settings`,{params});
+    },
   };
 };

@@ -12,7 +12,10 @@ exports.default = (function (axios) {
             return axios.get(endpoint + "/reviewDetails", { params: params });
         },
         respondToAnInteraction: function (params, response) {
-            return axios.post(endpoint + "/reviews/respond", { response: response });
+            return axios.post(endpoint + "/reviews/" + response, { params: params });
+        },
+        getListOfInteractionSources: function (locationId, params) {
+            return axios.get(endpoint + "/" + locationId + "/reviews/settings", { params: params });
         }
     };
 });

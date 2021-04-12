@@ -34,3 +34,12 @@ Interactions.getInteractionById()
   console.log("FAILURE");
 });
 */
+Interactions.getListOfInteractionSources(locationId)
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    console.log("SUCCESS");
+  })
+  .catch((error) => {
+    console.log(error);
+    console.log("FAILURE");
+  });
