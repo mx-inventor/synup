@@ -25,14 +25,14 @@ Interactions.getInteractionById()
   });
 
 /*Interactions.respondToAnInteraction()
-.then((response) => {
-  console.log(JSON.stringify(response.data));
-  console.log("SUCCESS");
-})
-.catch((error) => {
-  console.log(error);
-  console.log("FAILURE");
-});
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    console.log("SUCCESS");
+  })
+  .catch((error) => {
+    console.log(error);
+    console.log("FAILURE");
+  });
 */
 Interactions.getListOfInteractionSources(locationId)
   .then((response) => {
@@ -45,11 +45,21 @@ Interactions.getListOfInteractionSources(locationId)
   });
 
 /*Interactions.addInteractionSource()
-.then((response) => {
-  console.log(JSON.stringify(response.data));
-  console.log("SUCCESS");
-})
-.catch((error) => {
-  console.log(error);
-  console.log("FAILURE");
-}); */
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    console.log("SUCCESS");
+  })
+  .catch((error) => {
+    console.log(error);
+    console.log("FAILURE");
+  }); */
+
+Interactions.editInteractionSource()
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    console.log("SUCCESS");
+  })
+  .catch((error) => {
+    console.log(error);
+    console.log("FAILURE");
+  });

@@ -6,5 +6,6 @@ declare const _default: (axios: AxiosInstance) => {
     respondToAnInteraction: (params: RespondInteraction) => Promise<import("axios").AxiosResponse<any>>;
     getListOfInteractionSources: (locationId: any, params: InteractionParams) => Promise<import("axios").AxiosResponse<any>>;
     addInteractionSource: (params: InteractionParams) => Promise<import("axios").AxiosResponse<any>>;
+    editInteractionSource: (params: InteractionParams) => Promise<import("axios").AxiosResponse<any>>;
 };
 export default _default;

@@ -19,6 +19,9 @@ exports.default = (function (axios) {
         },
         addInteractionSource: function (params) {
             return axios.post(endpoint + "/reviews/settings/edit", params);
+        },
+        editInteractionSource: function (params) {
+            return axios.post(endpoint + "/reviews/settings/edit", { params: params });
         }
     };
 });

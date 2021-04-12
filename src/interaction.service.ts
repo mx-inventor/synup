@@ -21,6 +21,9 @@ export default (axios: AxiosInstance) => {
     },
     addInteractionSource:(params:InteractionParams)=>{
       return axios.post(`${endpoint}/reviews/settings/edit`,params);
+    },
+    editInteractionSource:(params:InteractionParams)=>{
+      return axios.post(`${endpoint}/reviews/settings/edit`,{params});
     }
   };
 };
