@@ -7,8 +7,9 @@ declare const _default: (apiKey: string) => {
     Interactions: {
         getInteractions: (locationId: any, params: import("./types/interactions").InteractionParams) => Promise<import("axios").AxiosResponse<any>>;
         getInteractionById: (params: import("./types/interactions").Interactions) => Promise<import("axios").AxiosResponse<any>>;
-        respondToAnInteraction: (params: import("./types/interactions").RespondInteraction, response: import("./types/interactions").Interaction) => Promise<import("axios").AxiosResponse<any>>;
+        respondToAnInteraction: (params: import("./types/interactions").RespondInteraction) => Promise<import("axios").AxiosResponse<any>>;
         getListOfInteractionSources: (locationId: any, params: import("./types/interactions").InteractionParams) => Promise<import("axios").AxiosResponse<any>>;
+        addInteractionSource: (params: import("./types/interactions").InteractionParams) => Promise<import("axios").AxiosResponse<any>>;
     };
     _axios: AxiosInstance;
 };

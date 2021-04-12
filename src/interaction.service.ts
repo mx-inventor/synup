@@ -19,5 +19,8 @@ export default (axios: AxiosInstance) => {
     getListOfInteractionSources:(locationId:any,params:InteractionParams)=>{
       return axios.get(`${endpoint}/${locationId}/reviews/settings`,{params});
     },
+    addInteractionSource:(params:InteractionParams)=>{
+      return axios.post(`${endpoint}/reviews/settings/edit`,params);
+    }
   };
 };

@@ -11,11 +11,14 @@ exports.default = (function (axios) {
         getInteractionById: function (params) {
             return axios.get(endpoint + "/reviewDetails", { params: params });
         },
-        respondToAnInteraction: function (params, response) {
-            return axios.post(endpoint + "/reviews/" + response, { params: params });
+        respondToAnInteraction: function (params) {
+            return axios.post(endpoint + "/reviews/respond", { params: params });
         },
         getListOfInteractionSources: function (locationId, params) {
             return axios.get(endpoint + "/" + locationId + "/reviews/settings", { params: params });
+        },
+        addInteractionSource: function (params) {
+            return axios.post(endpoint + "/reviews/settings/edit", params);
         }
     };
 });
