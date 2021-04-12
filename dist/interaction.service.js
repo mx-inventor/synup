@@ -10,6 +10,9 @@ exports.default = (function (axios) {
         },
         getInteractionById: function (params) {
             return axios.get(endpoint + "/reviewDetails", { params: params });
+        },
+        respondToAnInteraction: function (params, response) {
+            return axios.post(endpoint + "/reviews/respond", { response: response });
         }
     };
 });
