@@ -7,8 +7,8 @@ const endpoint = 'locations/';
 
 export default (axios: AxiosInstance) => {
   return {
-    getInteractions: (id:any, params: InteractionParams) => {
-      return axios.get(endpoint+id+"/reviews", {params});
+    getInteractions: (locationId:any, params: InteractionParams) => {
+      return axios.get(endpoint+locationId+"/reviews", {params});
     },
   };
 };

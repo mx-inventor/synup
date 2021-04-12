@@ -3,7 +3,7 @@ const synup = require("../dist/index")(process.env.SYNUP_KEY);
 const { Interactions } = synup;
 let id; 
 
-Interactions.getInteractions(id)
+Interactions.getInteractions(locationId)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
