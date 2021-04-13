@@ -7,17 +7,17 @@ const endpoint = 'locations';
 
 export default (axios: AxiosInstance) => {
   return {
-    getInteractions:(locationId:string, params: InteractionParams) => {
+    getInteractions:(locationId:string, params?: InteractionParams) => {
       return axios.get(`${endpoint}/${locationId}/reviews`, {params});
     },
-    getInteractionById:(params:Interactions)=>{
-      return axios.get(`${endpoint}/reviewDetails`,{params});
+    getInteractionById:(intractionByIds?:Array<string>)=>{
+      return axios.get(`${endpoint}/reviewDetails${intractionByIds}`);
     },
     respondToAnInteraction:(params:RespondInteraction)=>{
       return axios.post(`${endpoint}/reviews/respond`,params);
     },
-    getListOfInteractionSources:(locationId:string,params:InteractionParams)=>{
-      return axios.get(`${endpoint}/${locationId}/reviews/settings`,{params});
+    getListOfInteractionSources:(locationId:string)=>{
+      return axios.get(`${endpoint}/${locationId}/reviews/settings`);
     },
     addInteractionSource:(params:InteractionParams)=>{
       return axios.post(`${endpoint}/reviews/settings/edit`,params);
