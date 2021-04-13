@@ -12,7 +12,7 @@ exports.default = (function (axios) {
             return axios.get(endpoint + "/reviewDetails", { params: params });
         },
         respondToAnInteraction: function (params) {
-            return axios.post(endpoint + "/reviews/respond", { params: params });
+            return axios.post(endpoint + "/reviews/respond", params);
         },
         getListOfInteractionSources: function (locationId, params) {
             return axios.get(endpoint + "/" + locationId + "/reviews/settings", { params: params });
@@ -21,7 +21,7 @@ exports.default = (function (axios) {
             return axios.post(endpoint + "/reviews/settings/edit", params);
         },
         editInteractionSource: function (params) {
-            return axios.post(endpoint + "/reviews/settings/edit", { params: params });
+            return axios.post(endpoint + "/reviews/settings/edit", params);
         }
     };
 });

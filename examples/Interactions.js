@@ -1,7 +1,45 @@
 const synup = require("../dist/index")(process.env.SYNUP_KEY);
 
 const { Interactions } = synup;
-let locationId; 
+let locationId = "TWVkaWFGaWxlOjEzMDMzMg=="; 
+let respondInteraction ={
+  interactionId: "2090753a-ece6-4837-8336-8494ad308523",
+  responseContent:"This is a sample response"
+};
+
+let addInteraction ={  
+  locationId:"TG9jYXRpb246MTY4MDU=",
+  siteUrls:[  
+     {  
+        name:"trulia.com",
+        url:"test.com"
+     }
+  ]
+};
+
+let editInteraction ={  
+  "locationId":"TG9jYXRpb246MTY4MDU=",
+  "siteUrls":[  
+     {  
+        "name":"yelloyello.com",
+        "url":"https://www.yelloyello.com/places/tryvexan..."
+     },
+     {  
+        "name":"google.com",
+        "url":"https://www.google.com/search?ei=6vwBXZn..."
+     },
+     {  
+        "name":"facebook.com",
+        "url":"https://www.facebook.com/pg/thekitchenrestaurant/reviews/?ref=page_internal"
+     },
+     {  
+        "name":"maps.google.com",
+        "url":"https://www.google.com/maps/place/Foxy's+Landing..."
+     }
+  ]
+}; 
+
+
 
 
 Interactions.getInteractions(locationId)
@@ -24,7 +62,7 @@ Interactions.getInteractionById()
     console.log("FAILURE");
   });
 
-/*Interactions.respondToAnInteraction()
+Interactions.respondToAnInteraction(respondInteraction)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -33,7 +71,7 @@ Interactions.getInteractionById()
     console.log(error);
     console.log("FAILURE");
   });
-*/
+
 Interactions.getListOfInteractionSources(locationId)
   .then((response) => {
     console.log(JSON.stringify(response.data));
@@ -44,7 +82,7 @@ Interactions.getListOfInteractionSources(locationId)
     console.log("FAILURE");
   });
 
-/*Interactions.addInteractionSource()
+Interactions.addInteractionSource(addInteraction)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -52,9 +90,9 @@ Interactions.getListOfInteractionSources(locationId)
   .catch((error) => {
     console.log(error);
     console.log("FAILURE");
-  }); */
+  }); 
 
-Interactions.editInteractionSource()
+Interactions.editInteractionSource(editInteraction)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
