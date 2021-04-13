@@ -8,14 +8,14 @@ exports.default = (function (axios) {
         getInteractions: function (locationId, params) {
             return axios.get(endpoint + "/" + locationId + "/reviews", { params: params });
         },
-        getInteractionById: function (params) {
-            return axios.get(endpoint + "/reviewDetails", { params: params });
+        getInteractionById: function (intractionByIds) {
+            return axios.get(endpoint + "/reviewDetails" + intractionByIds);
         },
         respondToAnInteraction: function (params) {
             return axios.post(endpoint + "/reviews/respond", params);
         },
-        getListOfInteractionSources: function (locationId, params) {
-            return axios.get(endpoint + "/" + locationId + "/reviews/settings", { params: params });
+        getListOfInteractionSources: function (locationId) {
+            return axios.get(endpoint + "/" + locationId + "/reviews/settings");
         },
         addInteractionSource: function (params) {
             return axios.post(endpoint + "/reviews/settings/edit", params);

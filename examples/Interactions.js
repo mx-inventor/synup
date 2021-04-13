@@ -7,6 +7,8 @@ let respondInteraction ={
   responseContent:"This is a sample response"
 };
 
+let interactionById= ['b2fa765e-c62b-4e0b-b1d6-1c67c855f5e0'];
+
 let addInteraction ={  
   locationId:"TG9jYXRpb246MTY4MDU=",
   siteUrls:[  
@@ -40,8 +42,6 @@ let editInteraction ={
 }; 
 
 
-
-
 Interactions.getInteractions(locationId)
   .then((response) => {
     console.log(JSON.stringify(response.data));
@@ -52,7 +52,7 @@ Interactions.getInteractions(locationId)
     console.log("FAILURE");
   });
 
-Interactions.getInteractionById()
+Interactions.getInteractionById(interactionById)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
