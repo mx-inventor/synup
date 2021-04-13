@@ -1,6 +1,6 @@
 export type InteractionParams ={
-    locationId?: any,
-    siteUrls?: Array<any>,
+    locationId?: string,
+    siteUrls?: Array<string>,
     startDate?: any,
     endDate?:any,
     category?: any,
