@@ -7,19 +7,19 @@ const endpoint = 'locations';
 
 export default (axios: AxiosInstance) => {
   return {
-    getInteractions:(locationId:string, params?: InteractionParams) => {
+    getByLocationId:(locationId:string, params?: InteractionParams) => {
       return axios.get(`${endpoint}/${locationId}/reviews`, {params});
     },
-    getInteractionById:(intractionByIds?:Array<string>)=>{
-      return axios.get(`${endpoint}/reviewDetails${intractionByIds}`);
+    getById:(intractionByIds?:Array<string>)=>{
+      return axios.get(`${endpoint}/reviewDetails?interactionIds=${intractionByIds}`);
     },
     respondToAnInteraction:(params:RespondInteraction)=>{
       return axios.post(`${endpoint}/reviews/respond`,params);
     },
-    getListOfInteractionSources:(locationId:string)=>{
+    getSourcesByLocation:(locationId:string)=>{
       return axios.get(`${endpoint}/${locationId}/reviews/settings`);
     },
-    addInteractionSource:(params:InteractionParams)=>{
+    addInteractionSource:(params:InteractionParams)=>{//crear un type para site url
       return axios.post(`${endpoint}/reviews/settings/edit`,params);
     },
     editInteractionSource:(params:InteractionParams)=>{

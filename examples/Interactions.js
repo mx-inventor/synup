@@ -2,6 +2,7 @@ const synup = require("../dist/index")(process.env.SYNUP_KEY);
 
 const { Interactions } = synup;
 let locationId = "TWVkaWFGaWxlOjEzMDMzMg=="; 
+
 let respondInteraction ={
   interactionId: "2090753a-ece6-4837-8336-8494ad308523",
   responseContent:"This is a sample response"
@@ -42,7 +43,7 @@ let editInteraction ={
 }; 
 
 
-Interactions.getInteractions(locationId)
+Interactions.getByLocationId(locationId)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -52,7 +53,7 @@ Interactions.getInteractions(locationId)
     console.log("FAILURE");
   });
 
-Interactions.getInteractionById(interactionById)
+Interactions.getById(interactionById)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -72,7 +73,7 @@ Interactions.respondToAnInteraction(respondInteraction)
     console.log("FAILURE");
   });
 
-Interactions.getListOfInteractionSources(locationId)
+Interactions.getSourcesByLocation(locationId)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
