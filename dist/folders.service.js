@@ -4,7 +4,7 @@ var endpoint = 'locations';
 exports.default = (function (axios) {
     return {
         addLocations: function (params) {
-            return axios.post(endpoint + "/locations/folders", params);
+            return axios.post(endpoint + "/folders", params);
         }
     };
 });

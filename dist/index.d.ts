@@ -13,7 +13,7 @@ declare const _default: (apiKey: string) => {
         editInteractionSource: (params: import("./types/interactions").InteractionParams) => Promise<import("axios").AxiosResponse<any>>;
     };
     Folders: {
-        addLocations(params: import("./types/folders").AddLocations): Promise<import("axios").AxiosResponse<any>>;
+        addLocations(params: import("./types/folders").AddLocationsPropierties): Promise<import("axios").AxiosResponse<any>>;
     };
     _axios: AxiosInstance;
 };
