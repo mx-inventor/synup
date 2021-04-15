@@ -11,6 +11,9 @@ exports.default = (function (axios) {
         },
         removeLocation: function (params) {
             return axios.post(endpoint + "/remove", params);
+        },
+        deleteFolder: function (params) {
+            return axios.post("folders/remove", params);
         }
     };
 });
