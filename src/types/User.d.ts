@@ -24,3 +24,12 @@ export type CustomRole = {
 export type CreateUserWithRole = {
     input: User ;
 };
+
+export type InputAddLocationUser = {
+    userId?: string;
+    locationsIds?: Array<string>;
+};
+
+export type AddLocationUser = {
+    input: InputAddLocationUser;
+};

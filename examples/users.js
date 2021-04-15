@@ -2,6 +2,7 @@ const synup = require("../dist/index")(process.env.SYNUP_KEY);
 
 const { User } = synup;
 
+//LIST USER ROLES
  User.getAllUsersRoles()
    .then((response) => {
      console.log(JSON.stringify(response.data));
@@ -12,6 +13,7 @@ const { User } = synup;
      console.log("FAILURE");
    });
 
+//CREATE USER WITH ROLE
 let UserRole = {
     input:{
         id: "VXNlcjozNTUyOQ==",
@@ -36,6 +38,25 @@ User.createUserWithRole(UserRole)
     console.log(error);
     console.log("FAILURE");
   });
+
+  addLocationUser = {
+    input:{
+        userId:"VXNlcjoxMDAyOA==",
+        locationIds:["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246NDI1ODg="]
+    }
+}
+
+//ADD LOCATION TO USER
+User.addLocationUser(addLocationUser)
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    console.log("SUCCESS");
+  })
+  .catch((error) => {
+    console.log(error);
+    console.log("FAILURE");
+  });
+
 
 
 

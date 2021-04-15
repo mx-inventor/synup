@@ -10,5 +10,8 @@ exports.default = (function (axios) {
         createUserWithRole: function (params) {
             return axios.post(endpointUsers, params);
         },
+        addLocationUser: function (params) {
+            return axios.post(endpointUsers + "/location/add", params);
+        },
     };
 });
