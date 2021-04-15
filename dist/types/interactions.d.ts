@@ -76,7 +76,7 @@ export type Interaction ={
     interactionStatus?: string
 }
 
-export type addInteractionSource ={
+export type AddInteractionSource ={
     locationId?:string,
     siteUrls?:Array<Site>
 }

@@ -9,8 +9,11 @@ declare const _default: (apiKey: string) => {
         getById: (intractionByIds?: string[] | undefined) => Promise<import("axios").AxiosResponse<any>>;
         respondToAnInteraction: (params: import("./types/interactions").RespondInteraction) => Promise<import("axios").AxiosResponse<any>>;
         getSourcesByLocation: (locationId: string) => Promise<import("axios").AxiosResponse<any>>;
-        addInteractionSource: (params: import("./types/interactions").addInteractionSource) => Promise<import("axios").AxiosResponse<any>>;
+        addInteractionSource: (params: import("./types/interactions").AddInteractionSource) => Promise<import("axios").AxiosResponse<any>>;
         editInteractionSource: (params: import("./types/interactions").InteractionParams) => Promise<import("axios").AxiosResponse<any>>;
+    };
+    Folders: {
+        addLocations(params: import("./types/folders").AddLocations): Promise<import("axios").AxiosResponse<any>>;
     };
     _axios: AxiosInstance;
 };
