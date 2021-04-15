@@ -12,5 +12,8 @@ exports.default = (function (axios) {
         getByIds: function (ids) {
             return axios.get("locations-by-ids", { params: { ids: ids } });
         },
+        search: function (query) {
+            return axios.get(endpoint + "/search", { params: { query: query } });
+        },
     };
 });

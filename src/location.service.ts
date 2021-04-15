@@ -14,5 +14,8 @@ export default (axios: AxiosInstance) => {
     getByIds: (ids: Array<string>) => {
       return axios.get("locations-by-ids", { params: { ids } });
     },
+    search: (query:string) => {
+      return axios.get(endpoint + "/search", { params: {query}});
+    },
   };
 };
