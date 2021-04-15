@@ -26,6 +26,9 @@ exports.default = (function (axios) {
             return axios.get("users-by-ids/", {
                 params: { userIds: userIds }
             });
+        },
+        updateUser: function (params) {
+            return axios.post(endpointUsers + "/update", params);
         }
     };
 });

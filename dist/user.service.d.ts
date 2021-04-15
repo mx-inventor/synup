@@ -8,5 +8,6 @@ declare const _default: (axios: AxiosInstance) => {
     getAllUsers: (params: User) => Promise<import("axios").AxiosResponse<any>>;
     listUserResources: (userId: User) => Promise<import("axios").AxiosResponse<any>>;
     listUsersDetailsById: (userIds?: string[] | undefined) => Promise<import("axios").AxiosResponse<any>>;
+    updateUser: (params: User) => Promise<import("axios").AxiosResponse<any>>;
 };
 export default _default;

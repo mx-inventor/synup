@@ -112,6 +112,34 @@ User.getAllUsers()
     console.log("FAILURE");
   });
 
+  //UPDATE A USER
+  userUpdate = {
+    input:{
+        id:"VXNlcjo5OTY0",
+        email:"pttqa1+4186@gmail.com",
+        roleId:"Q3VzdG9tUm9sZToxNzc4Mw==",
+        firstName:"pttqa1+4187",
+        lastName:"",
+        phone:"",
+        archived:false,
+        directCustomer:true
+    }
+}
+
+User.updateUser(userUpdate)
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    console.log("SUCCESS");
+  })
+  .catch((error) => {
+    console.log(error);
+    console.log("FAILURE");
+  });
+
+
+
+
+
 
 
 

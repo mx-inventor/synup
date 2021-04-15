@@ -12,6 +12,7 @@ declare const _default: (apiKey: string) => {
         getAllUsers: (params: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
         listUserResources: (userId: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
         listUsersDetailsById: (userIds?: string[] | undefined) => Promise<import("axios").AxiosResponse<any>>;
+        updateUser: (params: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
     };
     _axios: AxiosInstance;
 };

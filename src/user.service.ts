@@ -28,6 +28,10 @@ export default (axios: AxiosInstance) => {
             return axios.get("users-by-ids/",{
                 params: {userIds:userIds}
             })
+        },
+        updateUser: (params: User) => {
+            return axios.post(endpointUsers + "/update", params);
         }
+
     }
 }
