@@ -21,3 +21,9 @@ export type RemoveLocations={
         locationIds:Array<string>
     }
 }
+
+export type DeleteFolder={
+    input:{
+        name:string
+    }
+}
