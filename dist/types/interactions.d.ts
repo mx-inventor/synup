@@ -11,9 +11,9 @@ export type InteractionParams ={
     last?: any
 }
 
-export type Interactions ={
+export type Interactions ={ 
     pageInfo?: PageInfo,
-    edges?: Array<Node>,// ask type of this
+    edges?: Array<Node>,
     totalCount?: number
 }
 
@@ -23,7 +23,7 @@ export type PageInfo ={
 }
 
 export type Node ={
-    id?: string, //interaction Id
+    id?: string, 
     source?: string,
     title?: string,
     content?: string,
@@ -39,7 +39,7 @@ export type Node ={
     photoThumbnailUrl?: string,
     responded?: boolean,
     notes?: string,
-    responses?: Array<Responses>, // ask type of this
+    responses?: Array<Responses>,
     totalResponses?: number,
     canRespond?: boolean
 }
@@ -74,4 +74,14 @@ export type Interaction ={
     authorAvatar?: string,
     date?: string,
     interactionStatus?: string
+}
+
+export type addInteractionSource ={
+    locationId?:string,
+    siteUrls?:Array<Site>
+}
+
+export type Site ={
+    name:string,
+    url:string
 }

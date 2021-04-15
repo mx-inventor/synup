@@ -5,11 +5,11 @@ declare const _default: (apiKey: string) => {
         getAllLocations: (params: import("./types/location").GetAllLocationsParams) => Promise<import("axios").AxiosResponse<any>>;
     };
     Interactions: {
-        getInteractions: (locationId: string, params?: import("./types/interactions").InteractionParams | undefined) => Promise<import("axios").AxiosResponse<any>>;
-        getInteractionById: (intractionByIds?: string[] | undefined) => Promise<import("axios").AxiosResponse<any>>;
+        getByLocationId: (locationId: string, params?: import("./types/interactions").InteractionParams | undefined) => Promise<import("axios").AxiosResponse<any>>;
+        getById: (intractionByIds?: string[] | undefined) => Promise<import("axios").AxiosResponse<any>>;
         respondToAnInteraction: (params: import("./types/interactions").RespondInteraction) => Promise<import("axios").AxiosResponse<any>>;
-        getListOfInteractionSources: (locationId: string) => Promise<import("axios").AxiosResponse<any>>;
-        addInteractionSource: (params: import("./types/interactions").InteractionParams) => Promise<import("axios").AxiosResponse<any>>;
+        getSourcesByLocation: (locationId: string) => Promise<import("axios").AxiosResponse<any>>;
+        addInteractionSource: (params: import("./types/interactions").addInteractionSource) => Promise<import("axios").AxiosResponse<any>>;
         editInteractionSource: (params: import("./types/interactions").InteractionParams) => Promise<import("axios").AxiosResponse<any>>;
     };
     _axios: AxiosInstance;
