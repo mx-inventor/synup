@@ -15,6 +15,9 @@ exports.default = (function (axios) {
         },
         addFoldersUser: function (params) {
             return axios.post(endpointUsers + "/folders/add", params);
+        },
+        getAllUsers: function (params) {
+            return axios.get(endpointUsers, { params: params });
         }
     };
 });

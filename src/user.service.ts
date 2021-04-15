@@ -17,7 +17,11 @@ export default (axios: AxiosInstance) => {
         },
         addFoldersUser: (params: AddFolderUser) => {
             return axios.post(endpointUsers + "/folders/add", params);
+        },
+        getAllUsers: (params: User) =>{
+            return axios.get(endpointUsers, {params});
         }
+
 
 
     
