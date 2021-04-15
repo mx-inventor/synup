@@ -20,10 +20,9 @@ export default (axios: AxiosInstance) => {
         },
         getAllUsers: (params: User) =>{
             return axios.get(endpointUsers, {params});
-        }
-
-
-
-    
+        },
+        listUserResources: (userId: User) => {
+            return axios.get(endpointUsers + "/" + userId + "/resources");
+        }    
     }
 }

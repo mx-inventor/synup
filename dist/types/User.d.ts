@@ -42,3 +42,4 @@ export type InputAddFolderUser = {
 export type AddFolderUser = {
     input: InputAddFolderUser;
 }
+

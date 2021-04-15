@@ -18,6 +18,9 @@ exports.default = (function (axios) {
         },
         getAllUsers: function (params) {
             return axios.get(endpointUsers, { params: params });
+        },
+        listUserResources: function (userId) {
+            return axios.get(endpointUsers + "/" + userId + "/resources");
         }
     };
 });

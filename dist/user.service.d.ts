@@ -6,5 +6,6 @@ declare const _default: (axios: AxiosInstance) => {
     addLocationUser: (params: AddLocationUser) => Promise<import("axios").AxiosResponse<any>>;
     addFoldersUser: (params: AddFolderUser) => Promise<import("axios").AxiosResponse<any>>;
     getAllUsers: (params: User) => Promise<import("axios").AxiosResponse<any>>;
+    listUserResources: (userId: User) => Promise<import("axios").AxiosResponse<any>>;
 };
 export default _default;

@@ -86,6 +86,19 @@ User.getAllUsers()
     console.log("FAILURE");
   });
 
+  //LIST USER RESOURCES
+  let userId="AISKcjo2OTk9"; 
+
+  User.listUserResources(userId)
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    console.log("SUCCESS");
+  })
+  .catch((error) => {
+    console.log(error);
+    console.log("FAILURE");
+  });
+
 
 
 

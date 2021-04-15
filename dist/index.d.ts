@@ -10,6 +10,7 @@ declare const _default: (apiKey: string) => {
         addLocationUser: (params: import("./types/User").AddLocationUser) => Promise<import("axios").AxiosResponse<any>>;
         addFoldersUser: (params: import("./types/User").AddFolderUser) => Promise<import("axios").AxiosResponse<any>>;
         getAllUsers: (params: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
+        listUserResources: (userId: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
     };
     _axios: AxiosInstance;
 };
