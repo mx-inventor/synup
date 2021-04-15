@@ -20,8 +20,14 @@ let addLocations ={
     "id":[  
        "0e4cc56e-45f8-4058-a713-ead264fa9318"
     ]
+  }
  }
- }
+
+let removeLocation={
+  "input":{
+    "locationIds":["TG9jYXRpb246MTY4NDY="]
+  }
+}
 
 Folders.addLocations(addLocations)
 .then((response) => {
@@ -35,6 +41,16 @@ Folders.addLocations(addLocations)
 
 Folders.rename(rename)
 .then((response) => {
+  console.log(JSON.stringify(response.data));
+  console.log("SUCCESS");
+})
+.catch((error) => {
+  console.log(error);
+  console.log("FAILURE");
+});
+
+Folders.removeLocation(removeLocation)
+.then((response) =>{
   console.log(JSON.stringify(response.data));
   console.log("SUCCESS");
 })
