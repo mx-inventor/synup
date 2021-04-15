@@ -1,5 +1,5 @@
 import { AxiosInstance } from "axios";
-import { AddLocationsPropierties,renameParams } from "./types/folders";
+import { AddLocationsPropierties,RenameParams,RemoveLocations } from "./types/folders";
 
 const endpoint = 'locations/folders';
 
@@ -9,8 +9,12 @@ export default (axios: AxiosInstance) => {
         return axios.post(`${endpoint}`, params);
     },
 
-    rename:(params:renameParams)=>{
+    rename:(params:RenameParams)=>{
       return axios.post(`${endpoint}/rename`,params);
+    },
+
+    removeLocation:(params:RemoveLocations)=>{
+      return axios.post(`${endpoint}/remove`,params);
     }
   };
 };
