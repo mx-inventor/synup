@@ -11,7 +11,10 @@ exports.default = (function (axios) {
             return axios.post(endpointUsers, params);
         },
         addLocationUser: function (params) {
-            return axios.post(endpointUsers + "/location/add", params);
+            return axios.post(endpointUsers + "/locations/add", params);
         },
+        addFoldersUser: function (params) {
+            return axios.post(endpointUsers + "/folders/add", params);
+        }
     };
 });

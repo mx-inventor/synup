@@ -33,3 +33,12 @@ export type InputAddLocationUser = {
 export type AddLocationUser = {
     input: InputAddLocationUser;
 };
+
+export type InputAddFolderUser = {
+    userId?: string;
+    foldersIds?: Array<string>;
+}
+
+export type AddFolderUser = {
+    input: InputAddFolderUser;
+}
