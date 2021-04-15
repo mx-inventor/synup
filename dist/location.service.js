@@ -3,11 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var endpoint = "locations";
 exports.default = (function (axios) {
     return {
-        create: function (data) {
-            return axios.post(endpoint, data);
+        create: function (params) {
+            return axios.post(endpoint, params);
         },
-        getAllLocations: function (params) {
+        getAll: function (params) {
             return axios.get(endpoint, { params: params });
+        },
+        getByIds: function (ids) {
+            return axios.get("locations-by-ids", { params: { ids: ids } });
         },
     };
 });

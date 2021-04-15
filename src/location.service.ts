@@ -8,8 +8,11 @@ export default (axios: AxiosInstance) => {
     create: (params: CreateLocationParams) => {
       return axios.post(endpoint, params);
     },
-    getAllLocations: (params: GetAllLocationsParams) => {
+    getAll: (params?: GetAllLocationsParams) => {
       return axios.get(endpoint, { params });
+    },
+    getByIds: (ids: Array<string>) => {
+      return axios.get("locations-by-ids", { params: { ids } });
     },
   };
 };
