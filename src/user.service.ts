@@ -1,5 +1,5 @@
 import{AxiosInstance} from "axios";
-import{createUserWithRole, User} from "./types/User";
+import{CreateUserWithRole, User} from "./types/User";
 
 const endpointRoles = "roles";
 const endpointUsers = "users";
@@ -9,9 +9,8 @@ export default (axios: AxiosInstance) => {
         getAllUsersRoles: (params: User) =>{
             return axios.get(endpointRoles, {params});
         },
-        createUserWithRole: (params: createUserWithRole) => {
-            return axios.post(endpointUsers, {params});
-        }
-
+        createUserWithRole: (params: CreateUserWithRole) => {
+            return axios.post(endpointUsers, params);
+        },
     }
 }

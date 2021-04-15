@@ -1,7 +1,7 @@
 import { AxiosInstance } from "axios";
-import { createUserWithRole, User } from "./types/User";
+import { CreateUserWithRole, User } from "./types/User";
 declare const _default: (axios: AxiosInstance) => {
     getAllUsersRoles: (params: User) => Promise<import("axios").AxiosResponse<any>>;
-    createUserWithRole: (params: createUserWithRole) => Promise<import("axios").AxiosResponse<any>>;
+    createUserWithRole: (params: CreateUserWithRole) => Promise<import("axios").AxiosResponse<any>>;
 };
 export default _default;

@@ -8,7 +8,7 @@ exports.default = (function (axios) {
             return axios.get(endpointRoles, { params: params });
         },
         createUserWithRole: function (params) {
-            return axios.post(endpointUsers, { params: params });
-        }
+            return axios.post(endpointUsers, params);
+        },
     };
 });

@@ -1,22 +1,26 @@
 export type User = {
-    UserId?: string;
+    id?: string;
     email?: string;
     roleId?: string;
     firstName?: string;
     lastName?: string;
     inviteStatus?: boolean;
-    customRole?: Object;
+    customRole?: CustomRole;
     customRoleId?: string;
     customRoleName?: string;
     directCustomer?: boolean;
-    AccountId?: string;
+    accountId?: string;
     locationId?: string;
     folderId: string;
     phone?: number;
     archived?: boolean;
+};
 
+export type CustomRole = {
+    id?: string;
+    name?: string;
 }
 
-export type createUserWithRole = {
-    input: User;
-}
+export type CreateUserWithRole = {
+    input: User ;
+};

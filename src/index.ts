@@ -16,7 +16,7 @@ export = (apiKey: string) => {
 
   return {
     Location: location(_axios),
-    user: user(_axios),
+    User: user(_axios),
     _axios,
   };
 };
