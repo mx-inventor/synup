@@ -21,6 +21,11 @@ exports.default = (function (axios) {
         },
         listUserResources: function (userId) {
             return axios.get(endpointUsers + "/" + userId + "/resources");
+        },
+        listUsersDetailsById: function (userIds) {
+            return axios.get("users-by-ids/", {
+                params: { userIds: userIds }
+            });
         }
     };
 });

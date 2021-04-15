@@ -23,6 +23,11 @@ export default (axios: AxiosInstance) => {
         },
         listUserResources: (userId: User) => {
             return axios.get(endpointUsers + "/" + userId + "/resources");
-        }    
+        },
+        listUsersDetailsById: (userIds?: Array<string> ) => {
+            return axios.get("users-by-ids/",{
+                params: {userIds:userIds}
+            })
+        }
     }
 }
