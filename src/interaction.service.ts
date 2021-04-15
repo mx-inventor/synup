@@ -1,5 +1,5 @@
 import { AxiosInstance } from "axios";
-import { addInteractionSource, InteractionParams, RespondInteraction } from "./types/interactions";
+import { AddInteractionSource, InteractionParams, RespondInteraction } from "./types/interactions";
 
 const endpoint = 'locations';
 
@@ -10,7 +10,8 @@ export default (axios: AxiosInstance) => {
     },
     getById:(intractionByIds?:Array<string>)=>{
       return axios.get(`${endpoint}/reviewDetails`,{
-        params:{interactionIds:intractionByIds}});
+        params:{interactionIds:intractionByIds}
+      });
     },
     respondToAnInteraction:(params:RespondInteraction)=>{
       return axios.post(`${endpoint}/reviews/respond`,params);
@@ -18,7 +19,7 @@ export default (axios: AxiosInstance) => {
     getSourcesByLocation:(locationId:string)=>{
       return axios.get(`${endpoint}/${locationId}/reviews/settings`);
     },
-    addInteractionSource:(params:addInteractionSource)=>{
+    addInteractionSource:(params:AddInteractionSource)=>{
       return axios.post(`${endpoint}/reviews/settings/edit`,params);
     },
     editInteractionSource:(params:InteractionParams)=>{
