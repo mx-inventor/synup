@@ -14,6 +14,15 @@ let addLocations ={
    }
  }
 
+ let rename={
+  "input":{  
+    "name":"Acme NEw",
+    "id":[  
+       "0e4cc56e-45f8-4058-a713-ead264fa9318"
+    ]
+ }
+ }
+
 Folders.addLocations(addLocations)
 .then((response) => {
     console.log(JSON.stringify(response.data));
@@ -23,3 +32,13 @@ Folders.addLocations(addLocations)
     console.log(error);
     console.log("FAILURE");
   });
+
+Folders.rename(rename)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+  console.log("SUCCESS");
+})
+.catch((error) => {
+  console.log(error);
+  console.log("FAILURE");
+});
