@@ -29,6 +29,9 @@ exports.default = (function (axios) {
         },
         updateUser: function (params) {
             return axios.post(endpointUsers + "/update", params);
+        },
+        removeLocationUser: function (params) {
+            return axios.post(endpointUsers + "/locations/remove", params);
         }
     };
 });

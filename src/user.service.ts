@@ -1,5 +1,5 @@
 import{AxiosInstance} from "axios";
-import{CreateUserWithRole, User, AddLocationUser, AddFolderUser} from "./types/User";
+import{CreateUserWithRole, User, LocationUser, AddFolderUser} from "./types/User";
 
 const endpointRoles = "roles";
 const endpointUsers = "users";
@@ -12,7 +12,7 @@ export default (axios: AxiosInstance) => {
         createUserWithRole: (params: CreateUserWithRole) => {
             return axios.post(endpointUsers, params);
         },
-        addLocationUser: (params: AddLocationUser) => {
+        addLocationUser: (params: LocationUser) => {
             return axios.post(endpointUsers + "/locations/add", params);
         },
         addFoldersUser: (params: AddFolderUser) => {
@@ -31,6 +31,9 @@ export default (axios: AxiosInstance) => {
         },
         updateUser: (params: User) => {
             return axios.post(endpointUsers + "/update", params);
+        },
+        removeLocationUser: (params: LocationUser) => {
+            return axios.post(endpointUsers + "/locations/remove", params);
         }
 
     }

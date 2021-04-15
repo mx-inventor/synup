@@ -25,13 +25,13 @@ export type CreateUserWithRole = {
     input: User ;
 };
 
-export type InputAddLocationUser = {
+export type InputLocationUser = {
     userId?: string;
     locationsIds?: Array<string>;
 };
 
-export type AddLocationUser = {
-    input: InputAddLocationUser;
+export type LocationUser = {
+    input: InputLocationUser;
 };
 
 export type InputAddFolderUser = {

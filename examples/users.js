@@ -40,14 +40,14 @@ User.createUserWithRole(UserRole)
   });
 
   //ADD LOCATION TO USER
-  addLocationUser = {
+  locationUser = {
     input:{
         userId:"VXNlcjoxMDAyOA==",
         locationIds:["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246NDI1ODg="]
     }
  }
 
-User.addLocationUser(addLocationUser)
+User.addLocationUser(locationUser)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -127,6 +127,17 @@ User.getAllUsers()
 }
 
 User.updateUser(userUpdate)
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    console.log("SUCCESS");
+  })
+  .catch((error) => {
+    console.log(error);
+    console.log("FAILURE");
+  });
+
+  //REMOVE LOCATION FOR A USER
+  User.removeLocationUser(locationUser)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
