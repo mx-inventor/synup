@@ -8,6 +8,9 @@ exports.default = (function (axios) {
         },
         rename: function (params) {
             return axios.post(endpoint + "/rename", params);
+        },
+        removeLocation: function (params) {
+            return axios.post(endpoint + "/remove", params);
         }
     };
 });

@@ -7,11 +7,17 @@ export type AddLocationsPropierties={
     input:AddLocations
 }
 
-export type rename={
+export type Rename={
     name:string
     id:Array<string>
 }
 
-export type renameParams={
-    input:rename
+export type RenameParams={
+    input:Rename
+}
+
+export type RemoveLocations={
+    input:{
+        locationIds:Array<string>
+    }
 }
