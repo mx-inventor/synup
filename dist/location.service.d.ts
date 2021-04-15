@@ -5,5 +5,6 @@ declare const _default: (axios: AxiosInstance) => {
     getAll: (params?: GetAllLocationsParams | undefined) => Promise<import("axios").AxiosResponse<any>>;
     getByIds: (ids: Array<string>) => Promise<import("axios").AxiosResponse<any>>;
     search: (query: string) => Promise<import("axios").AxiosResponse<any>>;
+    addPhoto: (locationId: Array<string>) => Promise<import("axios").AxiosResponse<any>>;
 };
 export default _default;

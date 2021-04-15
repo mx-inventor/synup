@@ -17,5 +17,8 @@ export default (axios: AxiosInstance) => {
     search: (query:string) => {
       return axios.get(endpoint + "/search", { params: {query}});
     },
+    addPhoto: (locationId: Array<string>) => {
+      return axios.get("locationId", { params: {locationId}});
+    },
   };
 };
