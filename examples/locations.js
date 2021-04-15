@@ -2,7 +2,7 @@ const synup = require("../dist/index")(process.env.SYNUP_KEY);
 
 const { Location } = synup;
 
-Location.getAll()
+/*Location.getAll()
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -30,7 +30,7 @@ Location.search("two")
   .catch((error) => {
     console.log(error);
     console.log("FAILURE");
-  });
+  });*/
 
 Location.addPhoto("TG9jYXRpb246MTI5Njkw")
 .then((response) => {

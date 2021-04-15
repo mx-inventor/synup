@@ -16,7 +16,7 @@ exports.default = (function (axios) {
             return axios.get(endpoint + "/search", { params: { query: query } });
         },
         addPhoto: function (locationId) {
-            return axios.get("locationId", { params: { locationId: locationId } });
+            return axios.post("locationId", { params: { locationId: locationId } });
         },
     };
 });
