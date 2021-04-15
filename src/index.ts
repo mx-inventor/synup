@@ -1,6 +1,7 @@
 import axios, { AxiosInstance } from "axios";
 
 import location from "./location.service";
+import interactions from "./interaction.service"
 
 const baseURL: string = "https://api.synup.com/api/v4/";
 let _axios: AxiosInstance;
@@ -15,6 +16,7 @@ export = (apiKey: string) => {
 
   return {
     Location: location(_axios),
+    Interactions: interactions(_axios),
     _axios,
   };
 };

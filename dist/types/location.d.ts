@@ -39,3 +39,7 @@ export type GetAllLocationsParams = {
   first?: any;
   last?: any;
 };
+
+export type CreateLocationParams = {
+  input: Location;
+};
