@@ -9,7 +9,7 @@ export default (axios: AxiosInstance) => {
         return axios.get(`${endpoint}/${locationId}/listings/premium`)
     },
     getAdittional:(locationId:Listings)=>{
-        return axios.get(`${endpoint}/${locationId}/listings/adittional`)
+        return axios.get(`${endpoint}/${locationId}/listings/additional`)
     }
   };
 };

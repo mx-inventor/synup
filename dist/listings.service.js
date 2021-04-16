@@ -7,7 +7,7 @@ exports.default = (function (axios) {
             return axios.get(endpoint + "/" + locationId + "/listings/premium");
         },
         getAdittional: function (locationId) {
-            return axios.get(endpoint + "/" + locationId + "/listings/adittional");
+            return axios.get(endpoint + "/" + locationId + "/listings/additional");
         }
     };
 });
