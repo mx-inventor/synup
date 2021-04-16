@@ -1,12 +1,15 @@
 import { AxiosInstance } from "axios";
-import { listings } from "./types/listings";
+import { Listings } from "./types/listings";
 
-const endpoint = "location/:id/listings";
+const endpoint = "locations";
 
 export default (axios: AxiosInstance) => {
   return {
-    getPremium:(params:listings)=>{
-        return axios.get(endpoint,{ params })
+    getPremium:(locationId:Listings)=>{
+        return axios.get(`${endpoint}/${locationId}/listings/premium`)
+    },
+    getAdittional:(locationId:Listings)=>{
+        return axios.get(`${endpoint}/${locationId}/listings/adittional`)
     }
   };
 };
