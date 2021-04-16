@@ -1,9 +1,9 @@
 const synup = require("../dist/index")(process.env.SYNUP_KEY);
 
-const { User } = synup;
+const { Users } = synup;
 
 //LIST USER ROLES
- User.getAllUsersRoles()
+ Users.getAllUsersRoles()
    .then((response) => {
      console.log(JSON.stringify(response.data));
      console.log("SUCCESS");
@@ -29,7 +29,7 @@ let UserRole = {
   }
 }
 
-User.createUserWithRole(UserRole)
+Users.createUserWithRole(UserRole)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -47,7 +47,7 @@ User.createUserWithRole(UserRole)
     }
  }
 
-User.addLocationUser(locationUser)
+Users.addLocationUser(locationUser)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -65,7 +65,7 @@ User.addLocationUser(locationUser)
     }
 }
 
-User.addFoldersUser(folderUser)
+Users.addFoldersUser(folderUser)
 .then((response) => {
   console.log(JSON.stringify(response.data));
   console.log("SUCCESS");
@@ -76,7 +76,7 @@ User.addFoldersUser(folderUser)
 });
 
 //LIST USER
-User.getAllUsers()
+Users.getAllUsers()
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -89,7 +89,7 @@ User.getAllUsers()
   //LIST USER RESOURCES
   let userId="AISKcjo2OTk9"; 
 
-  User.listUserResources(userId)
+  Users.listUserResources(userId)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -102,7 +102,7 @@ User.getAllUsers()
   //LIST USER DETAILS BY ID
   let userIds = ["VXNlcjo5OTgx", "VXNlcjoxMDAyOA=="];
 
-  User.listUsersDetailsById(userIds)
+  Users.listUsersDetailsById(userIds)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -126,7 +126,7 @@ User.getAllUsers()
     }
 }
 
-User.updateUser(userUpdate)
+Users.updateUser(userUpdate)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -137,7 +137,7 @@ User.updateUser(userUpdate)
   });
 
   //REMOVE LOCATION FOR A USER
-  User.removeLocationUser(locationUser)
+  Users.removeLocationUser(locationUser)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -148,7 +148,7 @@ User.updateUser(userUpdate)
   });
 
   //REMOVE FOLDERS A USER
-  User.removeFoldersUser(folderUser)
+  Users.removeFoldersUser(folderUser)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");

@@ -13,7 +13,7 @@ module.exports = function (apiKey) {
     }
     return {
         Location: location_service_1.default(_axios),
-        User: user_service_1.default(_axios),
+        Users: user_service_1.default(_axios),
         _axios: _axios,
     };
 };
