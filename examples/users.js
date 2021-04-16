@@ -3,15 +3,15 @@ const synup = require("../dist/index")(process.env.SYNUP_KEY);
 const { Users } = synup;
 
 //LIST USER ROLES
- Users.getAllUsersRoles()
-   .then((response) => {
-     console.log(JSON.stringify(response.data));
-     console.log("SUCCESS");
-   })
-   .catch((error) => {
-     console.log(error);
-     console.log("FAILURE");
-   });
+Users.getAllUsersRoles()
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    console.log("SUCCESS");
+  })
+  .catch((error) => {
+    console.log(error);
+    console.log("FAILURE");
+  });
 
 //CREATE USER WITH ROLE
 let UserRole = {
@@ -39,13 +39,13 @@ Users.createUserWithRole(UserRole)
     console.log("FAILURE");
   });
 
-  //ADD LOCATION TO USER
-  locationUser = {
-    input:{
-        userId:"VXNlcjoxMDAyOA==",
-        locationIds:["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246NDI1ODg="]
-    }
- }
+//ADD LOCATION TO USER
+let locationUser = {
+  input:{
+      userId:"VXNlcjoxMDAyOA==",
+      locationIds:["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246NDI1ODg="]
+  }
+}
 
 Users.addLocationUser(locationUser)
   .then((response) => {
@@ -57,23 +57,23 @@ Users.addLocationUser(locationUser)
     console.log("FAILURE");
   });
 
-  //ADD FOLDERS TO USER
-  folderUser = {
-    input:{
-        userId:"VXNlcjoxMDAyOA==",
-        folderIds:["c1d92c09-8ddd-469e-af96-0eb64a48d647","a5af4f5d-41b6-4a8a-b24f-98741b021b7b"]
-    }
+//ADD FOLDERS TO USER
+let folderUser = {
+  input:{
+       userId:"VXNlcjoxMDAyOA==",
+      folderIds:["c1d92c09-8ddd-469e-af96-0eb64a48d647","a5af4f5d-41b6-4a8a-b24f-98741b021b7b"]
+  }
 }
 
 Users.addFoldersUser(folderUser)
-.then((response) => {
-  console.log(JSON.stringify(response.data));
-  console.log("SUCCESS");
-})
-.catch((error) => {
-  console.log(error);
-  console.log("FAILURE");
-});
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    console.log("SUCCESS");
+  })
+  .catch((error) => {
+    console.log(error);
+    console.log("FAILURE");
+  });
 
 //LIST USER
 Users.getAllUsers()
@@ -86,10 +86,10 @@ Users.getAllUsers()
     console.log("FAILURE");
   });
 
-  //LIST USER RESOURCES
-  let userId="AISKcjo2OTk9"; 
+//LIST USER RESOURCES
+let userId="AISKcjo2OTk9"; 
 
-  Users.listUserResources(userId)
+Users.listUserResources(userId)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -99,10 +99,10 @@ Users.getAllUsers()
     console.log("FAILURE");
   });
 
-  //LIST USER DETAILS BY ID
-  let userIds = ["VXNlcjo5OTgx", "VXNlcjoxMDAyOA=="];
+//LIST USER DETAILS BY ID
+let userIds = ["VXNlcjo5OTgx", "VXNlcjoxMDAyOA=="];
 
-  Users.listUsersDetailsById(userIds)
+Users.listUsersDetailsById(userIds)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -112,18 +112,18 @@ Users.getAllUsers()
     console.log("FAILURE");
   });
 
-  //UPDATE A USER
-  userUpdate = {
-    input:{
-        id:"VXNlcjo5OTY0",
-        email:"pttqa1+4186@gmail.com",
-        roleId:"Q3VzdG9tUm9sZToxNzc4Mw==",
-        firstName:"pttqa1+4187",
-        lastName:"",
-        phone:"",
-        archived:false,
-        directCustomer:true
-    }
+//UPDATE A USER
+let userUpdate = {
+  input:{
+      id:"VXNlcjo5OTY0",
+      email:"pttqa1+4186@gmail.com",
+      roleId:"Q3VzdG9tUm9sZToxNzc4Mw==",
+      firstName:"pttqa1+4187",
+      lastName:"",
+      phone:"",
+      archived:false,
+      directCustomer:true
+  }
 }
 
 Users.updateUser(userUpdate)
@@ -136,8 +136,8 @@ Users.updateUser(userUpdate)
     console.log("FAILURE");
   });
 
-  //REMOVE LOCATION FOR A USER
-  Users.removeLocationUser(locationUser)
+//REMOVE LOCATION FOR A USER
+Users.removeLocationUser(locationUser)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -147,8 +147,8 @@ Users.updateUser(userUpdate)
     console.log("FAILURE");
   });
 
-  //REMOVE FOLDERS A USER
-  Users.removeFoldersUser(folderUser)
+//REMOVE FOLDERS A USER
+Users.removeFoldersUser(folderUser)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -157,18 +157,3 @@ Users.updateUser(userUpdate)
     console.log(error);
     console.log("FAILURE");
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
