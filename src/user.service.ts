@@ -6,25 +6,25 @@ const endpointUsers = "users";
 
 export default (axios: AxiosInstance) => {
     return{
-        getAllUsersRoles: (params: User) =>{
+        getAllRoles: (params: User) =>{
             return axios.get(endpointRoles, {params});
         },
-        createUserWithRole: (params: CreateUserWithRole) => {
+        createWithRole: (params: CreateUserWithRole) => {
             return axios.post(endpointUsers, params);
         },
-        addLocationUser: (params: LocationUser) => {
+        addLocation: (params: LocationUser) => {
             return axios.post(endpointUsers + "/locations/add", params);
         },
-        addFoldersUser: (params: FolderUser) => {
+        addFolder: (params: FolderUser) => {
             return axios.post(endpointUsers + "/folders/add", params);
         },
-        getAllUsers: (params: User) =>{
+        getAll: (params: User) =>{
             return axios.get(endpointUsers, {params});
         },
-        listUserResources: (userId: User) => {
+        listResources: (userId: User) => {
             return axios.get(endpointUsers + "/" + userId + "/resources");
         },
-        listUsersDetailsById: (userIds?: Array<string> ) => {
+        listByIds: (userIds?: Array<string> ) => {
             return axios.get("users-by-ids/",{
                 params: {userIds:userIds}
             })
@@ -32,10 +32,10 @@ export default (axios: AxiosInstance) => {
         updateUser: (params: User) => {
             return axios.post(endpointUsers + "/update", params);
         },
-        removeLocationUser: (params: LocationUser) => {
+        removeLocation: (params: LocationUser) => {
             return axios.post(endpointUsers + "/locations/remove", params);
         },
-        removeFoldersUser: (params: FolderUser ) => {
+        removeFolder: (params: FolderUser ) => {
             return axios.post(endpointUsers + "/folders/remove", params)
         }
     }

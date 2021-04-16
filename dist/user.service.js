@@ -4,25 +4,25 @@ var endpointRoles = "roles";
 var endpointUsers = "users";
 exports.default = (function (axios) {
     return {
-        getAllUsersRoles: function (params) {
+        getAllRoles: function (params) {
             return axios.get(endpointRoles, { params: params });
         },
-        createUserWithRole: function (params) {
+        createWithRole: function (params) {
             return axios.post(endpointUsers, params);
         },
-        addLocationUser: function (params) {
+        addLocation: function (params) {
             return axios.post(endpointUsers + "/locations/add", params);
         },
-        addFoldersUser: function (params) {
+        addFolder: function (params) {
             return axios.post(endpointUsers + "/folders/add", params);
         },
-        getAllUsers: function (params) {
+        getAll: function (params) {
             return axios.get(endpointUsers, { params: params });
         },
-        listUserResources: function (userId) {
+        listResources: function (userId) {
             return axios.get(endpointUsers + "/" + userId + "/resources");
         },
-        listUsersDetailsById: function (userIds) {
+        listByIds: function (userIds) {
             return axios.get("users-by-ids/", {
                 params: { userIds: userIds }
             });
@@ -30,10 +30,10 @@ exports.default = (function (axios) {
         updateUser: function (params) {
             return axios.post(endpointUsers + "/update", params);
         },
-        removeLocationUser: function (params) {
+        removeLocation: function (params) {
             return axios.post(endpointUsers + "/locations/remove", params);
         },
-        removeFoldersUser: function (params) {
+        removeFolder: function (params) {
             return axios.post(endpointUsers + "/folders/remove", params);
         }
     };

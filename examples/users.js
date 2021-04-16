@@ -3,7 +3,7 @@ const synup = require("../dist/index")(process.env.SYNUP_KEY);
 const { Users } = synup;
 
 //LIST USER ROLES
-Users.getAllUsersRoles()
+Users.getAllRoles()
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -14,7 +14,7 @@ Users.getAllUsersRoles()
   });
 
 //CREATE USER WITH ROLE
-let UserRole = {
+let userRole = {
   input:{
       id: "VXNlcjozNTUyOQ==",
       email:"mk@orthopreneur.com",
@@ -29,7 +29,7 @@ let UserRole = {
   }
 }
 
-Users.createUserWithRole(UserRole)
+Users.createWithRole(userRole)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -40,14 +40,14 @@ Users.createUserWithRole(UserRole)
   });
 
 //ADD LOCATION TO USER
-let locationUser = {
+let userLocation = {
   input:{
       userId:"VXNlcjoxMDAyOA==",
       locationIds:["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246NDI1ODg="]
   }
 }
 
-Users.addLocationUser(locationUser)
+Users.addLocation(userLocation)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -58,14 +58,14 @@ Users.addLocationUser(locationUser)
   });
 
 //ADD FOLDERS TO USER
-let folderUser = {
+let userFolder = {
   input:{
        userId:"VXNlcjoxMDAyOA==",
       folderIds:["c1d92c09-8ddd-469e-af96-0eb64a48d647","a5af4f5d-41b6-4a8a-b24f-98741b021b7b"]
   }
 }
 
-Users.addFoldersUser(folderUser)
+Users.addFolder(userFolder)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -76,7 +76,7 @@ Users.addFoldersUser(folderUser)
   });
 
 //LIST USER
-Users.getAllUsers()
+Users.getAll()
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -89,7 +89,7 @@ Users.getAllUsers()
 //LIST USER RESOURCES
 let userId="AISKcjo2OTk9"; 
 
-Users.listUserResources(userId)
+Users.listResources(userId)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -102,7 +102,7 @@ Users.listUserResources(userId)
 //LIST USER DETAILS BY ID
 let userIds = ["VXNlcjo5OTgx", "VXNlcjoxMDAyOA=="];
 
-Users.listUsersDetailsById(userIds)
+Users.listByIds(userIds)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -137,7 +137,7 @@ Users.updateUser(userUpdate)
   });
 
 //REMOVE LOCATION FOR A USER
-Users.removeLocationUser(locationUser)
+Users.removeLocation(userLocation)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -148,7 +148,7 @@ Users.removeLocationUser(locationUser)
   });
 
 //REMOVE FOLDERS A USER
-Users.removeFoldersUser(folderUser)
+Users.removeFolder(userFolder)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
