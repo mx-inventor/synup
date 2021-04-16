@@ -5,6 +5,9 @@ exports.default = (function (axios) {
     return {
         addLocations: function (params) {
             return axios.post("" + endpoint, params);
+        },
+        removeLocations: function (params) {
+            return axios.post(endpoint + "/remove", params);
         }
     };
 });

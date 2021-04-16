@@ -19,7 +19,8 @@ declare const _default: (apiKey: string) => {
         deleteFolder: (params: import("./types/folders").DeleteFolder) => Promise<import("axios").AxiosResponse<any>>;
     };
     Tags: {
-        addLocations: (params: import("./types/folders").AddLocations) => Promise<import("axios").AxiosResponse<any>>;
+        addLocations: (params: import("./types/tags").LocationTag) => Promise<import("axios").AxiosResponse<any>>;
+        removeLocations: (params: import("./types/tags").LocationTag) => Promise<import("axios").AxiosResponse<any>>;
     };
     _axios: AxiosInstance;
 };
