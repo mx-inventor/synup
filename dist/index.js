@@ -2,6 +2,9 @@
 var axios_1 = require("axios");
 var location_service_1 = require("./location.service");
 var user_service_1 = require("./user.service");
+var interaction_service_1 = require("./interaction.service");
+var folders_service_1 = require("./folders.service");
+var tags_service_1 = require("./tags.service");
 var baseURL = "https://api.synup.com/api/v4/";
 var _axios;
 module.exports = function (apiKey) {

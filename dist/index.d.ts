@@ -16,6 +16,24 @@ declare const _default: (apiKey: string) => {
         removeLocationUser: (params: import("./types/User").LocationUser) => Promise<import("axios").AxiosResponse<any>>;
         removeFoldersUser: (params: import("./types/User").FolderUser) => Promise<import("axios").AxiosResponse<any>>;
     };
+    Interactions: {
+        getByLocationId: (locationId: string, params?: import("./types/interactions").InteractionParams | undefined) => Promise<import("axios").AxiosResponse<any>>;
+        getById: (intractionByIds?: string[] | undefined) => Promise<import("axios").AxiosResponse<any>>;
+        respondToAnInteraction: (params: import("./types/interactions").RespondInteraction) => Promise<import("axios").AxiosResponse<any>>;
+        getSourcesByLocation: (locationId: string) => Promise<import("axios").AxiosResponse<any>>;
+        addInteractionSource: (params: import("./types/interactions").AddInteractionSource) => Promise<import("axios").AxiosResponse<any>>;
+        editInteractionSource: (params: import("./types/interactions").InteractionParams) => Promise<import("axios").AxiosResponse<any>>;
+    };
+    Folders: {
+        addLocations: (params: import("./types/folders").AddLocationsPropierties) => Promise<import("axios").AxiosResponse<any>>;
+        rename: (params: import("./types/folders").RenameParams) => Promise<import("axios").AxiosResponse<any>>;
+        removeLocation: (params: import("./types/folders").RemoveLocations) => Promise<import("axios").AxiosResponse<any>>;
+        deleteFolder: (params: import("./types/folders").DeleteFolder) => Promise<import("axios").AxiosResponse<any>>;
+    };
+    Tags: {
+        addLocations: (params: import("./types/tags").LocationTag) => Promise<import("axios").AxiosResponse<any>>;
+        removeLocations: (params: import("./types/tags").LocationTag) => Promise<import("axios").AxiosResponse<any>>;
+    };
     _axios: AxiosInstance;
 };
 export = _default;
