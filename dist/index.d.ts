@@ -8,12 +8,13 @@ declare const _default: (apiKey: string) => {
         getAllUsersRoles: (params: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
         createUserWithRole: (params: import("./types/User").CreateUserWithRole) => Promise<import("axios").AxiosResponse<any>>;
         addLocationUser: (params: import("./types/User").LocationUser) => Promise<import("axios").AxiosResponse<any>>;
-        addFoldersUser: (params: import("./types/User").AddFolderUser) => Promise<import("axios").AxiosResponse<any>>;
+        addFoldersUser: (params: import("./types/User").FolderUser) => Promise<import("axios").AxiosResponse<any>>;
         getAllUsers: (params: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
         listUserResources: (userId: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
         listUsersDetailsById: (userIds?: string[] | undefined) => Promise<import("axios").AxiosResponse<any>>;
         updateUser: (params: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
         removeLocationUser: (params: import("./types/User").LocationUser) => Promise<import("axios").AxiosResponse<any>>;
+        removeFoldersUser: (params: import("./types/User").FolderUser) => Promise<import("axios").AxiosResponse<any>>;
     };
     _axios: AxiosInstance;
 };

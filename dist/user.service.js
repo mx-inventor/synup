@@ -32,6 +32,9 @@ exports.default = (function (axios) {
         },
         removeLocationUser: function (params) {
             return axios.post(endpointUsers + "/locations/remove", params);
+        },
+        removeFoldersUser: function (params) {
+            return axios.post(endpointUsers + "/folders/remove", params);
         }
     };
 });

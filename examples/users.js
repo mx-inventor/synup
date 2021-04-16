@@ -58,14 +58,14 @@ User.addLocationUser(locationUser)
   });
 
   //ADD FOLDERS TO USER
-  addFolderUser = {
+  folderUser = {
     input:{
         userId:"VXNlcjoxMDAyOA==",
         folderIds:["c1d92c09-8ddd-469e-af96-0eb64a48d647","a5af4f5d-41b6-4a8a-b24f-98741b021b7b"]
     }
 }
 
-User.addFoldersUser(addFolderUser)
+User.addFoldersUser(folderUser)
 .then((response) => {
   console.log(JSON.stringify(response.data));
   console.log("SUCCESS");
@@ -146,6 +146,18 @@ User.updateUser(userUpdate)
     console.log(error);
     console.log("FAILURE");
   });
+
+  //REMOVE FOLDERS A USER
+  User.removeFoldersUser(folderUser)
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    console.log("SUCCESS");
+  })
+  .catch((error) => {
+    console.log(error);
+    console.log("FAILURE");
+  });
+
 
 
 

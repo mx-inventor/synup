@@ -34,12 +34,12 @@ export type LocationUser = {
     input: InputLocationUser;
 };
 
-export type InputAddFolderUser = {
+export type InputFolderUser = {
     userId?: string;
     foldersIds?: Array<string>;
 }
 
-export type AddFolderUser = {
-    input: InputAddFolderUser;
+export type FolderUser = {
+    input: InputFolderUser;
 }
 
