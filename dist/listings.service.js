@@ -1,10 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var endpoint = "location/:id/listings";
+var endpoint = "locations";
 exports.default = (function (axios) {
     return {
-        getPremium: function (params) {
-            return axios.get(endpoint, { params: params });
+        getPremium: function (locationId) {
+            return axios.get(endpoint + "/" + locationId + "/listings/premium");
+        },
+        getAdittional: function (locationId) {
+            return axios.get(endpoint + "/" + locationId + "/listings/adittional");
         }
     };
 });

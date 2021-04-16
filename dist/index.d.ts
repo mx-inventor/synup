@@ -35,7 +35,8 @@ declare const _default: (apiKey: string) => {
         removeLocations: (params: import("./types/tags").LocationTag) => Promise<import("axios").AxiosResponse<any>>;
     };
     Listings: {
-        getPremium: (params: import("./types/listings").listings) => Promise<import("axios").AxiosResponse<any>>;
+        getPremium: (locationId: import("./types/listings").Listings) => Promise<import("axios").AxiosResponse<any>>;
+        getAdittional: (locationId: import("./types/listings").Listings) => Promise<import("axios").AxiosResponse<any>>;
     };
     _axios: AxiosInstance;
 };
