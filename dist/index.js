@@ -1,6 +1,7 @@
 "use strict";
 var axios_1 = require("axios");
 var location_service_1 = require("./location.service");
+var user_service_1 = require("./user.service");
 var interaction_service_1 = require("./interaction.service");
 var folders_service_1 = require("./folders.service");
 var tags_service_1 = require("./tags.service");
@@ -15,6 +16,7 @@ module.exports = function (apiKey) {
     }
     return {
         Location: location_service_1.default(_axios),
+        Users: user_service_1.default(_axios),
         Interactions: interaction_service_1.default(_axios),
         Folders: folders_service_1.default(_axios),
         Tags: tags_service_1.default(_axios),
