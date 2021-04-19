@@ -38,6 +38,9 @@ declare const _default: (apiKey: string) => {
         getPremium: (locationId: import("./types/listings").Listings) => Promise<import("axios").AxiosResponse<any>>;
         getAdittional: (locationId: import("./types/listings").Listings) => Promise<import("axios").AxiosResponse<any>>;
     };
+    Rankings: {
+        addKeywordsLocation(params: import("./types/ranking").Keywords): Promise<import("axios").AxiosResponse<any>>;
+    };
     _axios: AxiosInstance;
 };
 export = _default;
