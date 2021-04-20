@@ -39,8 +39,9 @@ declare const _default: (apiKey: string) => {
         getAdittional: (locationId: import("./types/listings").Listings) => Promise<import("axios").AxiosResponse<any>>;
     };
     Rankings: {
-        addKeywordsLocation(params: import("./types/ranking").Keywords): Promise<import("axios").AxiosResponse<any>>;
-        listKeywords(locationId: import("./types/ranking").Keywords): Promise<import("axios").AxiosResponse<any>>;
+        addKeywordsLocation: (params: import("./types/ranking").Keywords) => Promise<import("axios").AxiosResponse<any>>;
+        listKeywords: (locationId: import("./types/ranking").Keywords) => Promise<import("axios").AxiosResponse<any>>;
+        getKeywordsPerformance: (locationId: import("./types/ranking").Keywords) => Promise<import("axios").AxiosResponse<any>>;
     };
     _axios: AxiosInstance;
 };

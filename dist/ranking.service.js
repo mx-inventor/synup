@@ -8,6 +8,9 @@ exports.default = (function (axios) {
         },
         listKeywords: function (locationId) {
             return axios.get(endpoint + "/" + locationId + "/keywords");
+        },
+        getKeywordsPerformance: function (locationId) {
+            return axios.get(endpoint + "/" + locationId + "/keywords-performance");
         }
     };
 });

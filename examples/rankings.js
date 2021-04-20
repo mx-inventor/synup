@@ -8,7 +8,7 @@ const {Rankings} = synup;
      inputKeywords: ["road paving", "road building"]
     }
 
- Rankings.addKeywordsLocation(addKeywords)
+Rankings.addKeywordsLocation(addKeywords)
    .then((response) => {
      console.log(JSON.stringify(response.data));
      console.log("SUCCESS");
@@ -20,6 +20,17 @@ const {Rankings} = synup;
 
 //LIST KEYWORDS
 Rankings.listKeywords()
+.then((response) => {
+    console.log(JSON.stringify(response.data));
+    console.log("SUCCESS");
+  })
+  .catch((error) => {
+    console.log(error);
+    console.log("FAILURE");
+  });
+
+//GET KEYWORDS PERMORMANCE
+Rankings.getKeywordsPerformance()
 .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
