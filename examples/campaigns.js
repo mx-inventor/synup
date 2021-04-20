@@ -17,21 +17,26 @@ let create= {
 }
 
 let add ={
-    "reviewCampaignId":"794be682-a321-4eac-953c-37dcac0a55a2",
-    "locationCustomers":[
-      {
-        "name":"John Doe",
-        "email":"john@example.com",
-        "phone":"1234123412"
-      },
-      {
-        "name":"Jane Doe",
-        "email":"jane@example.com",
-        "phone":"1234123413"
-      }
-    ]
+    "input":{
+      "reviewCampaignId":"794be682-a321-4eac-953c-37dcac0a55a2",
+      "locationCustomers":[
+          {
+          "name":"John Doe",
+          "email":"john@example.com",
+          "phone":"1234123412"
+          },
+          {
+          "name":"Jane Doe",
+          "email":"jane@example.com",
+          "phone":"1234123413"
+          }
+      ]
+    }
   }
 
+let locationId = "TG9jYXRpb246MTQwMjQ="
+
+// TG9jYXRpb246NTYyNjgy delete this
 
 /*Campaigns.create(create)
 .then((response) => {
@@ -41,8 +46,8 @@ let add ={
   .catch((error) => {
     console.log(error);
     console.log("FAILURE");
-  });
-*/
+  });*/
+
 Campaigns.addCustomers(add)
 .then((response) => {
     console.log(JSON.stringify(response.data));
@@ -52,3 +57,13 @@ Campaigns.addCustomers(add)
     console.log(error);
     console.log("FAILURE");
   });
+
+/*Campaigns.list(locationId)
+.then((response) => {
+    console.log(JSON.stringify(response.data));
+    console.log("SUCCESS");
+  })
+  .catch((error) => {
+    console.log(error);
+    console.log("FAILURE");
+  });*/
