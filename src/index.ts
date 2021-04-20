@@ -7,6 +7,7 @@ import folders from "./folders.service";
 import tags from "./tags.service";
 import listings from "./listings.service";
 import ranking from "./ranking.service";
+import campaigns from "./campaigns.service";
 
 const baseURL: string = "https://api.synup.com/api/v4/";
 let _axios: AxiosInstance;
@@ -24,9 +25,10 @@ export = (apiKey: string) => {
     Users: user(_axios),
     Interactions: interactions(_axios),
     Folders: folders(_axios),
-    Tags:  tags(_axios),
+    Tags: tags(_axios),
     Listings: listings(_axios),
     Rankings: ranking(_axios),
+    Campaigns: campaigns(_axios),
     _axios,
   };
 };
