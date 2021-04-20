@@ -11,6 +11,9 @@ exports.default = (function (axios) {
         },
         getKeywordsPerformance: function (locationId) {
             return axios.get(endpoint + "/" + locationId + "/keywords-performance");
+        },
+        archiveKeyword: function (params) {
+            return axios.post(endpoint + "/keywords/archive", params);
         }
     };
 });

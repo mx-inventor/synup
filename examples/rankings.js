@@ -39,3 +39,18 @@ Rankings.getKeywordsPerformance()
     console.log(error);
     console.log("FAILURE");
   });
+
+//ARCHIVE KEYWORD
+let archiveKeyword = {
+    id: "S2V5d29yZDo3NjQzMTE="
+}
+
+Rankings.archiveKeyword(archiveKeyword)
+.then((response) => {
+    console.log(JSON.stringify(response.data));
+    console.log("SUCCESS");
+  })
+  .catch((error) => {
+    console.log(error);
+    console.log("FAILURE");
+  });

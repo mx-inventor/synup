@@ -26,3 +26,7 @@ export type Rankings = {
     rankeAt?: any;
     matchUrl?: string;
 }
+
+export type InputArchive = {
+    id: string;
+}

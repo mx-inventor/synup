@@ -1,5 +1,5 @@
 import{AxiosInstance} from "axios";
-import {Keywords, KeywordsPermormance} from "./types/ranking";
+import {Keywords, InputArchive} from "./types/ranking";
 
 const endpoint = "locations";
 
@@ -13,6 +13,9 @@ export default (axios: AxiosInstance) => {
         },
         getKeywordsPerformance: (locationId: Keywords) => {
             return axios.get(endpoint + "/" + locationId + "/keywords-performance"); 
+        }, 
+        archiveKeyword: (params: InputArchive ) => {
+            return axios.post(endpoint + "/keywords/archive", params);
         }
     }
 }
