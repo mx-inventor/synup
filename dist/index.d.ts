@@ -40,6 +40,7 @@ declare const _default: (apiKey: string) => {
     };
     Rankings: {
         addKeywordsLocation(params: import("./types/ranking").Keywords): Promise<import("axios").AxiosResponse<any>>;
+        listKeywords(locationId: import("./types/ranking").Keywords): Promise<import("axios").AxiosResponse<any>>;
     };
     _axios: AxiosInstance;
 };

@@ -5,6 +5,9 @@ exports.default = (function (axios) {
     return {
         addKeywordsLocation: function (params) {
             return axios.post(endpoint + "/keywords", params);
+        },
+        listKeywords: function (locationId) {
+            return axios.get(endpoint + "/" + locationId + "/keywords");
         }
     };
 });
