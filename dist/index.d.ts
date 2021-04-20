@@ -38,6 +38,11 @@ declare const _default: (apiKey: string) => {
         getPremium: (locationId: import("./types/listings").Listings) => Promise<import("axios").AxiosResponse<any>>;
         getAdittional: (locationId: import("./types/listings").Listings) => Promise<import("axios").AxiosResponse<any>>;
     };
+    Campaigns: {
+        create: (params: import("./types/campaigns").Customer) => Promise<import("axios").AxiosResponse<any>>;
+        addCustomers: (params: import("./types/campaigns").AddCustomer) => Promise<import("axios").AxiosResponse<any>>;
+        list: (locationId: string, params?: import("./types/campaigns").listParams | undefined) => Promise<import("axios").AxiosResponse<any>>;
+    };
     _axios: AxiosInstance;
 };
 export = _default;
