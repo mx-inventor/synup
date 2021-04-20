@@ -36,9 +36,9 @@ let add ={
 
 let locationId = "TG9jYXRpb246MTQwMjQ="
 
-// TG9jYXRpb246NTYyNjgy delete this
 
-/*Campaigns.create(create)
+
+Campaigns.create(create)
 .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -46,7 +46,7 @@ let locationId = "TG9jYXRpb246MTQwMjQ="
   .catch((error) => {
     console.log(error);
     console.log("FAILURE");
-  });*/
+  });
 
 Campaigns.addCustomers(add)
 .then((response) => {
@@ -58,7 +58,7 @@ Campaigns.addCustomers(add)
     console.log("FAILURE");
   });
 
-/*Campaigns.list(locationId)
+Campaigns.list(locationId)
 .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -66,4 +66,4 @@ Campaigns.addCustomers(add)
   .catch((error) => {
     console.log(error);
     console.log("FAILURE");
-  });*/
+  });
