@@ -6,6 +6,7 @@ var interaction_service_1 = require("./interaction.service");
 var folders_service_1 = require("./folders.service");
 var tags_service_1 = require("./tags.service");
 var listings_service_1 = require("./listings.service");
+var ranking_service_1 = require("./ranking.service");
 var campaigns_service_1 = require("./campaigns.service");
 var baseURL = "https://api.synup.com/api/v4/";
 var _axios;
@@ -23,6 +24,7 @@ module.exports = function (apiKey) {
         Folders: folders_service_1.default(_axios),
         Tags: tags_service_1.default(_axios),
         Listings: listings_service_1.default(_axios),
+        Rankings: ranking_service_1.default(_axios),
         Campaigns: campaigns_service_1.default(_axios),
         _axios: _axios,
     };

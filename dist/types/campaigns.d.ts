@@ -14,7 +14,7 @@ export type listParams ={
 
 export type AddCustomer ={
     reviewCampaignId: string,
-    locationCustomers: Customer,
+    locationCustomers: Array<Customer>,
 }
 
 export type Customer ={
