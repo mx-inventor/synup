@@ -4,7 +4,7 @@ export type Keywords = {
 }
 
 export type KeywordsPermormance = {
-    locationId?: Keywords;
+    locationId?: string;
     fromDate?: any;
     toDate?: any;
 }
@@ -28,5 +28,5 @@ export type Rankings = {
 }
 
 export type InputArchive = {
-    id: string;
+    id?: string;
 }

@@ -9,8 +9,8 @@ exports.default = (function (axios) {
         listKeywords: function (locationId) {
             return axios.get(endpoint + "/" + locationId + "/keywords");
         },
-        getKeywordsPerformance: function (locationId) {
-            return axios.get(endpoint + "/" + locationId + "/keywords-performance");
+        getKeywordsPerformance: function (locationId, params) {
+            return axios.get(endpoint + "/" + { locationId: locationId } + "/keywords-performance", { params: params });
         },
         archiveKeyword: function (params) {
             return axios.post(endpoint + "/keywords/archive", params);
