@@ -5,7 +5,7 @@ const { Folders } = synup;
 let addLocations ={ 
   "input":{
     "name": "MyFolder1",
-    "locationIds": ["TG9jYXRpb246NTYyNjgy"]
+    "locationIds": ["TG9jYXRpb246MTQwMjQ="]
   }
 }
 
