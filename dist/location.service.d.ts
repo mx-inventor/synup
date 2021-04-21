@@ -11,5 +11,6 @@ declare const _default: (axios: AxiosInstance) => {
     startPhoto: (params: startPhoto) => Promise<import("axios").AxiosResponse<any>>;
     archiveLocation: (ids: Array<string>) => Promise<import("axios").AxiosResponse<any>>;
     activateLocation: (locationId: Array<string>) => Promise<import("axios").AxiosResponse<any>>;
+    subscriptions: (params: CreateLocationParams) => Promise<import("axios").AxiosResponse<any>>;
 };
 export default _default;

@@ -35,5 +35,8 @@ export default (axios: AxiosInstance) => {
     activateLocation: (locationId: Array<string>) => {
       return axios.post(endpoint + "/activate", {params:{locationId}} );
     },
+    subscriptions: (params: CreateLocationParams) => {
+      return axios.get(endpoint,{params});
+    },
   };
 };

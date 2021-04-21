@@ -33,5 +33,8 @@ exports.default = (function (axios) {
         activateLocation: function (locationId) {
             return axios.post(endpoint + "/activate", { params: { locationId: locationId } });
         },
+        subscriptions: function (params) {
+            return axios.get(endpoint, { params: params });
+        },
     };
 });
