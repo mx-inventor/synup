@@ -48,3 +48,8 @@ export type deletePhoto = {
   locationId?:string;
   photosIds?: Array<string>; 
 };
+
+export type updateLocation = {
+  id:string;
+  phone:string;
+};

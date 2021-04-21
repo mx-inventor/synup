@@ -7,6 +7,7 @@ declare const _default: (apiKey: string) => {
         search: (query: string) => Promise<import("axios").AxiosResponse<any>>;
         addPhoto: (locationId: string[]) => Promise<import("axios").AxiosResponse<any>>;
         deletePhoto: (params: import("./types/location").deletePhoto) => Promise<import("axios").AxiosResponse<any>>;
+        updateLocation: (params: import("./types/location").updateLocation) => Promise<import("axios").AxiosResponse<any>>;
     };
     _axios: AxiosInstance;
 };

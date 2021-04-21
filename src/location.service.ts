@@ -1,5 +1,5 @@
 import { AxiosInstance } from "axios";
-import { CreateLocationParams, deletePhoto, GetAllLocationsParams } from "./types/location";
+import { CreateLocationParams, deletePhoto, GetAllLocationsParams, updateLocation } from "./types/location";
 
 const endpoint = "locations";
 
@@ -20,12 +20,11 @@ export default (axios: AxiosInstance) => {
     addPhoto: (locationId: Array<string>) => {
       return axios.post("locationId", { params: {locationId}});
     },
-    deletePhoto: (params:deletePhoto
-      ) => {
+    deletePhoto: (params:deletePhoto) => {
       return axios.post(`${endpoint}/photoIds/remove`, params);
-    }
-    /*updateLocation: () => {
-      return axios.post(endpoint + "/updateLocation", {params: {update}});
-    },*/
+    },
+    updateLocation: (params:updateLocation) => {
+      return axios.post(`${endpoint}/update`, params);
+    },
   };
 };

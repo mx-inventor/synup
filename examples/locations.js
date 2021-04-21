@@ -52,7 +52,7 @@ Location.deletePhoto()
   console.log("FAILURE");
 });
 
-/*Location.updateLocation()
+Location.updateLocation()
 .then((response) => {
   console.log(JSON.stringify(response.data));
   console.log("SUCCESS");
@@ -60,4 +60,4 @@ Location.deletePhoto()
 .catch((error) => {
   console.log(error);
   console.log("FAILURE");
-  });*/
+  });

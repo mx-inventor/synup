@@ -20,9 +20,9 @@ exports.default = (function (axios) {
         },
         deletePhoto: function (params) {
             return axios.post(endpoint + "/photoIds/remove", params);
-        }
-        /*updateLocation: () => {
-          return axios.post(endpoint + "/updateLocation", {params: {update}});
-        },*/
+        },
+        updateLocation: function (params) {
+            return axios.post(endpoint + "/update", params);
+        },
     };
 });
