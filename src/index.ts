@@ -8,6 +8,7 @@ import tags from "./tags.service";
 import listings from "./listings.service";
 import ranking from "./ranking.service";
 import campaigns from "./campaigns.service";
+import analytics from "./analytics.service" 
 
 const baseURL: string = "https://api.synup.com/api/v4/";
 let _axios: AxiosInstance;
@@ -29,6 +30,7 @@ export = (apiKey: string) => {
     Listings: listings(_axios),
     Rankings: ranking(_axios),
     Campaigns: campaigns(_axios),
+    Analytics: analytics(_axios),
     _axios,
   };
 };
