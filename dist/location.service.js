@@ -27,5 +27,8 @@ exports.default = (function (axios) {
         startPhoto: function (params) {
             return axios.post(endpoint + "/star", params);
         },
+        archiveLocation: function (ids) {
+            return axios.post(endpoint + "/archive", { paramas: { ids: ids } });
+        },
     };
 });

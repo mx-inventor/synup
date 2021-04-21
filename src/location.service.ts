@@ -29,5 +29,8 @@ export default (axios: AxiosInstance) => {
     startPhoto: (params:startPhoto) => {
       return axios.post(`${endpoint}/star`,params);
     },
+    archiveLocation: (ids: Array<string>) => {
+      return axios.post(endpoint + "/archive", {paramas:{ids}});
+    },
   };
 };

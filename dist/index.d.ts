@@ -9,6 +9,7 @@ declare const _default: (apiKey: string) => {
         deletePhoto: (params: import("./types/location").deletePhoto) => Promise<import("axios").AxiosResponse<any>>;
         updateLocation: (params: import("./types/location").updateLocation) => Promise<import("axios").AxiosResponse<any>>;
         startPhoto: (params: import("./types/location").startPhoto) => Promise<import("axios").AxiosResponse<any>>;
+        archiveLocation: (ids: string[]) => Promise<import("axios").AxiosResponse<any>>;
     };
     _axios: AxiosInstance;
 };

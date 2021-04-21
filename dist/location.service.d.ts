@@ -9,5 +9,6 @@ declare const _default: (axios: AxiosInstance) => {
     deletePhoto: (params: deletePhoto) => Promise<import("axios").AxiosResponse<any>>;
     updateLocation: (params: updateLocation) => Promise<import("axios").AxiosResponse<any>>;
     startPhoto: (params: startPhoto) => Promise<import("axios").AxiosResponse<any>>;
+    archiveLocation: (ids: Array<string>) => Promise<import("axios").AxiosResponse<any>>;
 };
 export default _default;
