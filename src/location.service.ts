@@ -32,5 +32,8 @@ export default (axios: AxiosInstance) => {
     archiveLocation: (ids: Array<string>) => {
       return axios.post(endpoint + "/archive", {paramas:{ids}});
     },
+    activateLocation: (locationId: Array<string>) => {
+      return axios.post(endpoint + "/activate", {params:{locationId}} );
+    },
   };
 };

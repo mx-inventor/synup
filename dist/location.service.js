@@ -30,5 +30,8 @@ exports.default = (function (axios) {
         archiveLocation: function (ids) {
             return axios.post(endpoint + "/archive", { paramas: { ids: ids } });
         },
+        activateLocation: function (locationId) {
+            return axios.post(endpoint + "/activate", { params: { locationId: locationId } });
+        },
     };
 });
