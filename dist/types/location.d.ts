@@ -45,17 +45,17 @@ export type CreateLocationParams = {
 };
 
 export type deletePhoto = {
-  locationId?: string;
-  photosIds?: Array<string>;
+  locationId?:string;
+  photosIds?: Array<string>; 
 };
 
 export type updateLocation = {
-  id: string;
-  phone: string;
+  id:string;
+  phone:string;
 };
 
 export type startPhoto = {
-  locationId: string;
-  mediaIds: [string];
-  starred: Boolean;
+  locationId:string;
+  mediaIds:[string];
+  starred:Boolean;
 };
