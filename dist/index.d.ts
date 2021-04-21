@@ -49,6 +49,9 @@ declare const _default: (apiKey: string) => {
         addCustomers: (params: import("./types/campaigns").AddCustomer) => Promise<import("axios").AxiosResponse<any>>;
         list: (locationId: string, params?: import("./types/campaigns").listParams | undefined) => Promise<import("axios").AxiosResponse<any>>;
     };
+    Places: {
+        getPlaces: (params: any) => Promise<import("axios").AxiosResponse<any>>;
+    };
     Analytics: {
         bing: (locationId: string, params?: import("./types/analytics").Analytics | undefined) => Promise<import("axios").AxiosResponse<any>>;
         google: (locationId: string, params?: import("./types/analytics").Analytics | undefined) => Promise<import("axios").AxiosResponse<any>>;
