@@ -53,3 +53,9 @@ export type updateLocation = {
   id:string;
   phone:string;
 };
+
+export type startPhoto = {
+  locationId:string;
+  mediaIds:[string];
+  starred:Boolean;
+};

@@ -1,5 +1,5 @@
 import { AxiosInstance } from "axios";
-import { CreateLocationParams, deletePhoto, GetAllLocationsParams, updateLocation } from "./types/location";
+import { CreateLocationParams, deletePhoto, GetAllLocationsParams, startPhoto, updateLocation } from "./types/location";
 declare const _default: (axios: AxiosInstance) => {
     create: (params: CreateLocationParams) => Promise<import("axios").AxiosResponse<any>>;
     getAll: (params?: GetAllLocationsParams | undefined) => Promise<import("axios").AxiosResponse<any>>;
@@ -8,5 +8,6 @@ declare const _default: (axios: AxiosInstance) => {
     addPhoto: (locationId: Array<string>) => Promise<import("axios").AxiosResponse<any>>;
     deletePhoto: (params: deletePhoto) => Promise<import("axios").AxiosResponse<any>>;
     updateLocation: (params: updateLocation) => Promise<import("axios").AxiosResponse<any>>;
+    startPhoto: (params: startPhoto) => Promise<import("axios").AxiosResponse<any>>;
 };
 export default _default;

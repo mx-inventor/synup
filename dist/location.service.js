@@ -24,5 +24,8 @@ exports.default = (function (axios) {
         updateLocation: function (params) {
             return axios.post(endpoint + "/update", params);
         },
+        startPhoto: function (params) {
+            return axios.post(endpoint + "/star", params);
+        },
     };
 });

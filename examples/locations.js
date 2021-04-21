@@ -61,3 +61,13 @@ Location.updateLocation()
   console.log(error);
   console.log("FAILURE");
   });
+
+Location.startPhoto()
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+  console.log("SUCCESS");
+})
+.catch((error) => {
+  console.log(error);
+  console.log("FAILURE");
+  });
