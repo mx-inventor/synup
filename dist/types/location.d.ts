@@ -43,3 +43,8 @@ export type GetAllLocationsParams = {
 export type CreateLocationParams = {
   input: Location;
 };
+
+export type deletePhoto = {
+  locationId?:string;
+  photosIds?: Array<string>; 
+};

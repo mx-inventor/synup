@@ -6,6 +6,7 @@ declare const _default: (apiKey: string) => {
         getByIds: (ids: string[]) => Promise<import("axios").AxiosResponse<any>>;
         search: (query: string) => Promise<import("axios").AxiosResponse<any>>;
         addPhoto: (locationId: string[]) => Promise<import("axios").AxiosResponse<any>>;
+        deletePhoto: (params: import("./types/location").deletePhoto) => Promise<import("axios").AxiosResponse<any>>;
     };
     _axios: AxiosInstance;
 };

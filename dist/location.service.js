@@ -18,5 +18,11 @@ exports.default = (function (axios) {
         addPhoto: function (locationId) {
             return axios.post("locationId", { params: { locationId: locationId } });
         },
+        deletePhoto: function (params) {
+            return axios.post(endpoint + "/photoIds/remove", params);
+        }
+        /*updateLocation: () => {
+          return axios.post(endpoint + "/updateLocation", {params: {update}});
+        },*/
     };
 });
