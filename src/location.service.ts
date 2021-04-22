@@ -17,23 +17,23 @@ export default (axios: AxiosInstance) => {
     search: (query:string) => {
       return axios.get(endpoint + "/search", { params: {query}});
     },
-    addPhoto: (locationId: Array<string>) => {
-      return axios.post("locationId", { params: {locationId}});
+    addPhoto: (locationId: string, photos: Array <string>) => {
+      return axios.post(`${endpoint}/photos`, { input: {locationId, photos}});
     },
-    deletePhoto: (params:deletePhoto) => {
-      return axios.post(`${endpoint}/photoIds/remove`, params);
+    deletePhoto: (locationId: string, photoIds: Array<string>) => {
+      return axios.post(`${endpoint}/photos/remove`, { input:{locationId,photoIds}});
     },
     updateLocation: (params:updateLocation) => {
       return axios.post(`${endpoint}/update`, params);
     },
-    startPhoto: (params:startPhoto) => {
-      return axios.post(`${endpoint}/star`,params);
+    startPhoto: (input:startPhoto) => {
+      return axios.post(`${endpoint}/photos/star`, input);
     },
     archiveLocation: (ids: Array<string>) => {
-      return axios.post(endpoint + "/archive", {paramas:{ids}});
+      return axios.post(endpoint + "/archive", {input:{locationIds: ids}});
     },
-    activateLocation: (locationId: Array<string>) => {
-      return axios.post(endpoint + "/activate", {params:{locationId}} );
+    activateLocation: (locationIds: Array<string>) => {
+      return axios.post(endpoint + "/activate", {input:{locationIds}} );
     },
     subscriptions: (params: CreateLocationParams) => {
       return axios.get(endpoint,{params});

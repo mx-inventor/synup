@@ -44,14 +44,18 @@ export type CreateLocationParams = {
   input: Location;
 };
 
+export type addPhoto = {
+  locationId:string;
+  photos:Array<string>;
+};
+
 export type deletePhoto = {
-  locationId?:string;
-  photosIds?: Array<string>; 
+  locationId:string;
+  photosIds: Array<string>; 
 };
 
 export type updateLocation = {
-  id:string;
-  phone:string;
+  input:Location;
 };
 
 export type startPhoto = {

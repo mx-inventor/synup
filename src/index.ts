@@ -14,7 +14,7 @@ export = (apiKey: string) => {
   }
 
   return {
-    Location: location(_axios),
+    Locations: location(_axios),
     _axios,
   };
 };

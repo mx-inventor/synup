@@ -11,7 +11,7 @@ module.exports = function (apiKey) {
         });
     }
     return {
-        Location: location_service_1.default(_axios),
+        Locations: location_service_1.default(_axios),
         _axios: _axios,
     };
 };
