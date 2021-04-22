@@ -41,5 +41,5 @@ export type GetAllLocationsParams = {
 };
 
 export type CreateLocationParams = {
-  input: Location;
+  input?: Location;
 };
