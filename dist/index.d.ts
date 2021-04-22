@@ -6,7 +6,7 @@ declare const _default: (apiKey: string) => {
     };
     Users: {
         getAllRoles: (params: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
-        createWithRole: (params: import("./types/User").CreateUserWithRole) => Promise<import("axios").AxiosResponse<any>>;
+        createWithRole: (user: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
         addLocations: (userId: string, locationIds: string[]) => Promise<import("axios").AxiosResponse<any>>;
         addFolder: (params: import("./types/User").FolderUser) => Promise<import("axios").AxiosResponse<any>>;
         getAll: (params: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;

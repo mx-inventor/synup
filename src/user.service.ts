@@ -1,5 +1,5 @@
 import{AxiosInstance} from "axios";
-import{CreateUserWithRole, User, FolderUser} from "./types/User";
+import{User, FolderUser} from "./types/User";
 
 const endpointRoles = "roles";
 const endpointUsers = "users";
@@ -9,8 +9,8 @@ export default (axios: AxiosInstance) => {
         getAllRoles: (params: User) =>{
             return axios.get(endpointRoles, {params});
         },
-        createWithRole: (params: CreateUserWithRole) => {
-            return axios.post(endpointUsers, params);
+        createWithRole: (user: User) => {
+            return axios.post(endpointUsers, user);
         },
         addLocations: (userId: string, locationIds: Array<string>) => {
             return axios.post(endpointUsers + "/locations/add", { 

@@ -1,8 +1,8 @@
 import { AxiosInstance } from "axios";
-import { CreateUserWithRole, User, FolderUser } from "./types/User";
+import { User, FolderUser } from "./types/User";
 declare const _default: (axios: AxiosInstance) => {
     getAllRoles: (params: User) => Promise<import("axios").AxiosResponse<any>>;
-    createWithRole: (params: CreateUserWithRole) => Promise<import("axios").AxiosResponse<any>>;
+    createWithRole: (user: User) => Promise<import("axios").AxiosResponse<any>>;
     addLocations: (userId: string, locationIds: Array<string>) => Promise<import("axios").AxiosResponse<any>>;
     addFolder: (params: FolderUser) => Promise<import("axios").AxiosResponse<any>>;
     getAll: (params: User) => Promise<import("axios").AxiosResponse<any>>;

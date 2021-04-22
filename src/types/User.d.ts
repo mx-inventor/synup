@@ -21,10 +21,6 @@ export type CustomRole = {
     name?: string;
 }
 
-export type CreateUserWithRole = {
-    input: User ;
-};
-
 export type InputFolderUser = {
     userId?: string;
     foldersIds?: Array<string>;

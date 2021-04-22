@@ -15,7 +15,6 @@ Users.getAllRoles()
 
 //CREATE USER WITH ROLE
 let userRole = {
-  input:{
       id: "VXNlcjozNTUyOQ==",
       email:"mk@orthopreneur.com",
       roleId:"Q3VzdG9tUm9sZTo3Mjc1NA==",
@@ -27,7 +26,6 @@ let userRole = {
         name: "Client"
       },
   }
-}
 
 Users.createWithRole(userRole)
   .then((response) => {
@@ -40,7 +38,12 @@ Users.createWithRole(userRole)
   });
 
 //ADD LOCATION TO USER
-Users.addLocations("VXNlcjoxMDAyOA==", ["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246NDI1ODg="])
+let userLocation = {
+      userId:"VXNlcjoxMDAyOA==",
+      locationIds:["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246NDI1ODg="]
+  }
+
+Users.addLocations(userLocation)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -130,7 +133,7 @@ Users.updateUser(userUpdate)
   });
 
 //REMOVE LOCATION FOR A USER
-Users.removeLocations("VXNlcjoxMDAyOA==", ["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246NDI1ODg="])
+Users.removeLocations(userLocation)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
