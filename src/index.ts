@@ -23,7 +23,7 @@ export = (apiKey: string) => {
   }
 
   return {
-    Location: location(_axios),
+    Locations: location(_axios),
     Users: user(_axios),
     Interactions: interactions(_axios),
     Folders: folders(_axios),

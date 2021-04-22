@@ -20,7 +20,7 @@ module.exports = function (apiKey) {
         });
     }
     return {
-        Location: location_service_1.default(_axios),
+        Locations: location_service_1.default(_axios),
         Users: user_service_1.default(_axios),
         Interactions: interaction_service_1.default(_axios),
         Folders: folders_service_1.default(_axios),

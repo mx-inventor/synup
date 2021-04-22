@@ -43,3 +43,23 @@ export type GetAllLocationsParams = {
 export type CreateLocationParams = {
   input?: Location;
 };
+
+export type AddPhoto = {
+  locationId:string;
+  photos:Array<string>;
+};
+
+export type DeletePhoto = {
+  locationId:string;
+  photosIds: Array<string>; 
+};
+
+export type UpdateLocation = {
+  input:Location;
+};
+
+export type StartPhoto = {
+  locationId:string;
+  mediaIds:[string];
+  starred:Boolean;
+};
