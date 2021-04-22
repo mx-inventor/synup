@@ -12,8 +12,13 @@ exports.default = (function (axios) {
                 }
             });
         },
-        addCustomers: function (params) {
-            return axios.post(endpoint + "/customers", params);
+        addCustomers: function (reviewCampaignId, locationCustomers) {
+            return axios.post(endpoint + "/customers", {
+                input: {
+                    reviewCampaignId: reviewCampaignId,
+                    locationCustomers: locationCustomers,
+                }
+            });
         },
         list: function (locationId, params) {
             return axios.get("locations/" + locationId + "/review-campaigns", { params: params });
