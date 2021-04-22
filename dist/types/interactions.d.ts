@@ -82,6 +82,6 @@ export type AddInteractionSource ={
 }
 
 export type Site ={
-    name:string,
-    url:string
+    name?:string,
+    url?:string
 }

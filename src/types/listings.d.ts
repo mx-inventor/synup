@@ -1,3 +1,3 @@
 export type Listings ={
-    locationId:string
+    locationId?:string
 }
