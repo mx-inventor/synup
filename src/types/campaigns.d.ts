@@ -1,5 +1,5 @@
 export type Create ={
-    input?:{
+    input:{
         locationId?:string,
         name?: string,
         locationCostumer?: Array<Customer>,
