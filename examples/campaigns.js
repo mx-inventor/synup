@@ -15,26 +15,9 @@ let customers= [
     }
 ]
 
-let add ={
-    "input":{
-      "reviewCampaignId":"794be682-a321-4eac-953c-37dcac0a55a2",
-      "locationCustomers":[
-          {
-          "name":"John Doe",
-          "email":"john@example.com",
-          "phone":"1234123412"
-          },
-          {
-          "name":"Jane Doe",
-          "email":"jane@example.com",
-          "phone":"1234123413"
-          }
-      ]
-    }
-  }
-
+let reviewCampaignId = "794be682-a321-4eac-953c-37dcac0a55a2"
+      
 let locationId = "TG9jYXRpb246MTQwMjQ="
-
 
 
 Campaigns.create("TG9jYXRpb246MTQwMjQ=","myName", customers)
@@ -47,7 +30,7 @@ Campaigns.create("TG9jYXRpb246MTQwMjQ=","myName", customers)
     console.log("FAILURE");
   });
 
-/*Campaigns.addCustomers(add)
+Campaigns.addCustomers(reviewCampaignId,customers)
 .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -65,4 +48,4 @@ Campaigns.list(locationId)
   .catch((error) => {
     console.log(error);
     console.log("FAILURE");
-  });*/
+  });
