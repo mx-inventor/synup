@@ -7,13 +7,13 @@ declare const _default: (apiKey: string) => {
     Users: {
         getAllRoles: (params: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
         createWithRole: (params: import("./types/User").CreateUserWithRole) => Promise<import("axios").AxiosResponse<any>>;
-        addLocation: (params: import("./types/User").LocationUser) => Promise<import("axios").AxiosResponse<any>>;
+        addLocations: (userId: string, locationIds: string[]) => Promise<import("axios").AxiosResponse<any>>;
         addFolder: (params: import("./types/User").FolderUser) => Promise<import("axios").AxiosResponse<any>>;
         getAll: (params: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
         listResources: (userId: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
         listByIds: (userIds?: string[] | undefined) => Promise<import("axios").AxiosResponse<any>>;
         updateUser: (params: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
-        removeLocation: (params: import("./types/User").LocationUser) => Promise<import("axios").AxiosResponse<any>>;
+        removeLocations: (userId: string, locationIds: string[]) => Promise<import("axios").AxiosResponse<any>>;
         removeFolder: (params: import("./types/User").FolderUser) => Promise<import("axios").AxiosResponse<any>>;
     };
     Interactions: {

@@ -10,8 +10,13 @@ exports.default = (function (axios) {
         createWithRole: function (params) {
             return axios.post(endpointUsers, params);
         },
-        addLocation: function (params) {
-            return axios.post(endpointUsers + "/locations/add", params);
+        addLocations: function (userId, locationIds) {
+            return axios.post(endpointUsers + "/locations/add", {
+                input: {
+                    userId: userId,
+                    locationIds: locationIds
+                }
+            });
         },
         addFolder: function (params) {
             return axios.post(endpointUsers + "/folders/add", params);
@@ -30,8 +35,13 @@ exports.default = (function (axios) {
         updateUser: function (params) {
             return axios.post(endpointUsers + "/update", params);
         },
-        removeLocation: function (params) {
-            return axios.post(endpointUsers + "/locations/remove", params);
+        removeLocations: function (userId, locationIds) {
+            return axios.post(endpointUsers + "/locations/remove", {
+                input: {
+                    userId: userId,
+                    locationIds: locationIds
+                }
+            });
         },
         removeFolder: function (params) {
             return axios.post(endpointUsers + "/folders/remove", params);

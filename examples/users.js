@@ -40,14 +40,7 @@ Users.createWithRole(userRole)
   });
 
 //ADD LOCATION TO USER
-let userLocation = {
-  input:{
-      userId:"VXNlcjoxMDAyOA==",
-      locationIds:["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246NDI1ODg="]
-  }
-}
-
-Users.addLocation(userLocation)
+Users.addLocations("VXNlcjoxMDAyOA==", ["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246NDI1ODg="])
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -137,7 +130,7 @@ Users.updateUser(userUpdate)
   });
 
 //REMOVE LOCATION FOR A USER
-Users.removeLocation(userLocation)
+Users.removeLocations("VXNlcjoxMDAyOA==", ["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246NDI1ODg="])
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
