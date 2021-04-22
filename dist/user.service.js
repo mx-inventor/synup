@@ -18,8 +18,13 @@ exports.default = (function (axios) {
                 }
             });
         },
-        addFolder: function (params) {
-            return axios.post(endpointUsers + "/folders/add", params);
+        addFolders: function (userId, folderIds) {
+            return axios.post(endpointUsers + "/folders/add", {
+                input: {
+                    userId: userId,
+                    folderIds: folderIds
+                }
+            });
         },
         getAll: function (params) {
             return axios.get(endpointUsers, { params: params });
@@ -43,8 +48,13 @@ exports.default = (function (axios) {
                 }
             });
         },
-        removeFolder: function (params) {
-            return axios.post(endpointUsers + "/folders/remove", params);
+        removeFolders: function (userId, folderIds) {
+            return axios.post(endpointUsers + "/folders/remove", {
+                input: {
+                    userId: userId,
+                    folderIds: folderIds
+                }
+            });
         }
     };
 });

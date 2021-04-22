@@ -1,5 +1,5 @@
 import{AxiosInstance} from "axios";
-import{User, FolderUser} from "./types/User";
+import{User} from "./types/User";
 
 const endpointRoles = "roles";
 const endpointUsers = "users";
@@ -20,8 +20,13 @@ export default (axios: AxiosInstance) => {
                 }
             });
         },
-        addFolder: (params: FolderUser) => {
-            return axios.post(endpointUsers + "/folders/add", params);
+        addFolders: (userId: string, folderIds: Array<string>) => {
+            return axios.post(endpointUsers + "/folders/add",{
+                input: {
+                    userId,
+                    folderIds
+                }
+            });
         },
         getAll: (params: User) =>{
             return axios.get(endpointUsers, {params});
@@ -45,8 +50,13 @@ export default (axios: AxiosInstance) => {
                 }
             });
         },
-        removeFolder: (params: FolderUser ) => {
-            return axios.post(endpointUsers + "/folders/remove", params)
+        removeFolders: (userId: string, folderIds: Array<string> ) => {
+            return axios.post(endpointUsers + "/folders/remove", {
+                input: {
+                    userId,
+                    folderIds
+                }
+            })
         }
     }
 }

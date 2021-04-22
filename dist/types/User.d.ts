@@ -21,12 +21,3 @@ export type CustomRole = {
     name?: string;
 }
 
-export type InputFolderUser = {
-    userId?: string;
-    foldersIds?: Array<string>;
-}
-
-export type FolderUser = {
-    input: InputFolderUser;
-}
-

@@ -49,14 +49,7 @@ Users.addLocations("VXNlcjoxMDAyOA==",["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246NDI1
   });
 
 //ADD FOLDERS TO USER
-let userFolder = {
-  input:{
-       userId:"VXNlcjoxMDAyOA==",
-      folderIds:["c1d92c09-8ddd-469e-af96-0eb64a48d647","a5af4f5d-41b6-4a8a-b24f-98741b021b7b"]
-  }
-}
-
-Users.addFolder(userFolder)
+Users.addFolders("VXNlcjoxMDAyOA==", ["c1d92c09-8ddd-469e-af96-0eb64a48d647","a5af4f5d-41b6-4a8a-b24f-98741b021b7b"])
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -139,7 +132,7 @@ Users.removeLocations("VXNlcjoxMDAyOA==",["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246N
   });
 
 //REMOVE FOLDERS A USER
-Users.removeFolder(userFolder)
+Users.removeFolders("VXNlcjoxMDAyOA==", ["c1d92c09-8ddd-469e-af96-0eb64a48d647","a5af4f5d-41b6-4a8a-b24f-98741b021b7b"])
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
