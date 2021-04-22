@@ -1,29 +1,29 @@
 export type AddLocations ={
-    name:string,
-    locationIds:Array<string>
+    name?:string,
+    locationIds?:Array<string>
 }
 
 export type AddLocationsPropierties={
-    input:AddLocations
+    input?:AddLocations
 }
 
 export type Rename={
-    name:string
-    id:Array<string>
+    name?:string
+    id?:Array<string>
 }
 
 export type RenameParams={
-    input:Rename
+    input?:Rename
 }
 
 export type RemoveLocations={
-    input:{
-        locationIds:Array<string>
+    input?:{
+        locationIds?:Array<string>
     }
 }
 
 export type DeleteFolder={
-    input:{
-        name:string
+    input?:{
+        name?:string
     }
 }
