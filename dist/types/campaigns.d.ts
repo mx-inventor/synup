@@ -1,5 +1,5 @@
 export type Create ={
-    input?:{
+    input:{
         locationId?:string,
         name?: string,
         locationCostumer?: Array<Customer>,
@@ -7,7 +7,6 @@ export type Create ={
 }
 
 export type listParams ={
-    locationId?:string,
     startDate?: any,
     endDate?: any
 }
