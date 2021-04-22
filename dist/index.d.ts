@@ -47,7 +47,7 @@ declare const _default: (apiKey: string) => {
     Campaigns: {
         create: (locationId: string, name: string, locationCustomers: import("./types/campaigns").Customer[]) => Promise<import("axios").AxiosResponse<any>>;
         addCustomers: (reviewCampaignId: string, locationCustomers: import("./types/campaigns").Customer[]) => Promise<import("axios").AxiosResponse<any>>;
-        list: (locationId: string, params?: import("./types/campaigns").listParams | undefined) => Promise<import("axios").AxiosResponse<any>>;
+        list: (locationId: string, params?: import("./types/campaigns").ListParams | undefined) => Promise<import("axios").AxiosResponse<any>>;
     };
     Places: {
         getPlaces: (params: any) => Promise<import("axios").AxiosResponse<any>>;

@@ -1,5 +1,5 @@
 import{AxiosInstance} from "axios"
-import { Customer,listParams } from "./types/campaigns";
+import { Customer,ListParams } from "./types/campaigns";
 
 const endpoint = "locations/review-campaigns"
 
@@ -22,7 +22,7 @@ export default (axios: AxiosInstance) => {
             }
           })
       },
-      list:(locationId:string,params?:listParams)=>{
+      list:(locationId:string,params?:ListParams)=>{
           return axios.get(`locations/${locationId}/review-campaigns`,{params})
       }
     };

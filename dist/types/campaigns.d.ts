@@ -1,4 +1,4 @@
-export type listParams ={
+export type ListParams ={
     startDate?: any,
     endDate?: any
 }
