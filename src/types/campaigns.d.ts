@@ -7,7 +7,6 @@ export type Create ={
 }
 
 export type listParams ={
-    locationId?:string,
     startDate?: any,
     endDate?: any
 }
