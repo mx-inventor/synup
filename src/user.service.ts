@@ -39,8 +39,13 @@ export default (axios: AxiosInstance) => {
                 params: {userIds:userIds}
             })
         },
-        updateUser: (params: User) => {
-            return axios.post(endpointUsers + "/update", params);
+        update: (userId: string, user: User) => {
+            return axios.post(endpointUsers + "/update", {
+                input: {
+                    id:userId,
+                    ...user
+                }
+            });
         },
         removeLocations: (userId: string, locationIds: Array<string>) => {
             return axios.post(endpointUsers + "/locations/remove", {

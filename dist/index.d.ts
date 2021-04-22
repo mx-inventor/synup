@@ -12,7 +12,7 @@ declare const _default: (apiKey: string) => {
         getAll: (params: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
         listResources: (userId: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
         listByIds: (userIds?: string[] | undefined) => Promise<import("axios").AxiosResponse<any>>;
-        updateUser: (params: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
+        update: (userId: string, user: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
         removeLocations: (userId: string, locationIds: string[]) => Promise<import("axios").AxiosResponse<any>>;
         removeFolders: (userId: string, folderIds: string[]) => Promise<import("axios").AxiosResponse<any>>;
     };

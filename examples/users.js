@@ -97,8 +97,7 @@ Users.listByIds(userIds)
   });
 
 //UPDATE A USER
-let userUpdate = {
-  input:{
+let user = {
       id:"VXNlcjo5OTY0",
       email:"pttqa1+4186@gmail.com",
       roleId:"Q3VzdG9tUm9sZToxNzc4Mw==",
@@ -107,10 +106,9 @@ let userUpdate = {
       phone:"",
       archived:false,
       directCustomer:true
-  }
 }
 
-Users.updateUser(userUpdate)
+Users.update("VXNlcjoxMDAyOA==", user)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");

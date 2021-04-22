@@ -8,7 +8,7 @@ declare const _default: (axios: AxiosInstance) => {
     getAll: (params: User) => Promise<import("axios").AxiosResponse<any>>;
     listResources: (userId: User) => Promise<import("axios").AxiosResponse<any>>;
     listByIds: (userIds?: string[] | undefined) => Promise<import("axios").AxiosResponse<any>>;
-    updateUser: (params: User) => Promise<import("axios").AxiosResponse<any>>;
+    update: (userId: string, user: User) => Promise<import("axios").AxiosResponse<any>>;
     removeLocations: (userId: string, locationIds: Array<string>) => Promise<import("axios").AxiosResponse<any>>;
     removeFolders: (userId: string, folderIds: Array<string>) => Promise<import("axios").AxiosResponse<any>>;
 };
