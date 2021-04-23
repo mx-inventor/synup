@@ -3,17 +3,35 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var endpoint = 'locations/folders';
 exports.default = (function (axios) {
     return {
-        addLocations: function (params) {
-            return axios.post("" + endpoint, params);
+        addLocations: function (name, locationIds) {
+            return axios.post("" + endpoint, {
+                input: {
+                    name: name,
+                    locationIds: locationIds
+                }
+            });
         },
-        rename: function (params) {
-            return axios.post(endpoint + "/rename", params);
+        rename: function (name, id) {
+            return axios.post(endpoint + "/rename", {
+                input: {
+                    name: name,
+                    id: id
+                }
+            });
         },
-        removeLocation: function (params) {
-            return axios.post(endpoint + "/remove", params);
+        removeLocation: function (locationIds) {
+            return axios.post(endpoint + "/remove", {
+                input: {
+                    locationIds: locationIds
+                }
+            });
         },
-        deleteFolder: function (params) {
-            return axios.post("folders/remove", params);
+        deleteFolder: function (name) {
+            return axios.post("folders/remove", {
+                input: {
+                    name: name
+                }
+            });
         }
     };
 });

@@ -34,10 +34,10 @@ declare const _default: (apiKey: string) => {
         editInteractionSource: (params: import("./types/interactions").InteractionParams) => Promise<import("axios").AxiosResponse<any>>;
     };
     Folders: {
-        addLocations: (params: import("./types/folders").AddLocationsPropierties) => Promise<import("axios").AxiosResponse<any>>;
-        rename: (params: import("./types/folders").RenameParams) => Promise<import("axios").AxiosResponse<any>>;
-        removeLocation: (params: import("./types/folders").RemoveLocations) => Promise<import("axios").AxiosResponse<any>>;
-        deleteFolder: (params: import("./types/folders").DeleteFolder) => Promise<import("axios").AxiosResponse<any>>;
+        addLocations: (name: string, locationIds: string[]) => Promise<import("axios").AxiosResponse<any>>;
+        rename: (name: string, id: string[]) => Promise<import("axios").AxiosResponse<any>>;
+        removeLocation: (locationIds: string[]) => Promise<import("axios").AxiosResponse<any>>;
+        deleteFolder: (name: string) => Promise<import("axios").AxiosResponse<any>>;
     };
     Tags: {
         addLocations: (params: import("./types/tags").LocationTag) => Promise<import("axios").AxiosResponse<any>>;
