@@ -21,25 +21,3 @@ export type CustomRole = {
     name?: string;
 }
 
-export type CreateUserWithRole = {
-    input: User ;
-};
-
-export type InputLocationUser = {
-    userId?: string;
-    locationsIds?: Array<string>;
-};
-
-export type LocationUser = {
-    input: InputLocationUser;
-};
-
-export type InputFolderUser = {
-    userId?: string;
-    foldersIds?: Array<string>;
-}
-
-export type FolderUser = {
-    input: InputFolderUser;
-}
-
