@@ -3,11 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var endpoint = "locations";
 exports.default = (function (axios) {
     return {
-        addKeywords: function (locationId, keywords) {
+        addKeywords: function (locationId, inputKeywords) {
             return axios.post(endpoint + "/keywords", {
                 input: {
                     locationId: locationId,
-                    keywords: keywords
+                    inputKeywords: inputKeywords
                 }
             });
         },

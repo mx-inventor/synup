@@ -5,11 +5,11 @@ const endpoint = "locations";
 
 export default (axios: AxiosInstance) => {
     return{
-        addKeywords: (locationId: string, keywords: Array<string>) => {
+        addKeywords: (locationId: string, inputKeywords: Array<string>) => {
             return axios.post(endpoint + "/keywords", {
                 input: {
                     locationId,
-                    keywords
+                    inputKeywords
                 }
             });
         },
