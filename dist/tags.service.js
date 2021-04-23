@@ -3,11 +3,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var endpoint = "locations/tags";
 exports.default = (function (axios) {
     return {
-        addLocations: function (params) {
-            return axios.post("" + endpoint, params);
+        addLocation: function (locationId, tag) {
+            return axios.post("" + endpoint, {
+                input: {
+                    locationId: locationId,
+                    tag: tag
+                }
+            });
         },
-        removeLocations: function (params) {
-            return axios.post(endpoint + "/remove", params);
+        removeLocation: function (locationId, tag) {
+            return axios.post(endpoint + "/remove", {
+                input: {
+                    locationId: locationId,
+                    tag: tag
+                }
+            });
         }
     };
 });

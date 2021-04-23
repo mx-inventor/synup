@@ -2,14 +2,7 @@ const synup = require("../dist/index")(process.env.SYNUP_KEY);
 
 const { Tags } = synup;
 
-let tagsTest={
-    "input":{
-        "locationId":"TG9jYXRpb246MTY4NjA=",
-        "tag":"New"
-    }
-}
-
-Tags.addLocations(tagsTest)
+Tags.addLocation("TG9jYXRpb246MTY4NjA=", "New")
 .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -19,7 +12,7 @@ Tags.addLocations(tagsTest)
     console.log("FAILURE");
   });
 
-  Tags.removeLocations(tagsTest)
+  Tags.removeLocation("TG9jYXRpb246MTY4NjA=", "New")
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");

@@ -1,15 +1,24 @@
 import { AxiosInstance } from "axios";
-import { LocationTag } from "./types/tags";
 
 const endpoint = "locations/tags";
 
 export default (axios: AxiosInstance) => {
   return {
-    addLocations:(params:LocationTag)=>{
-        return axios.post(`${endpoint}`,params);
+    addLocation:(locationId: string, tag: string)=>{
+        return axios.post(`${endpoint}`, {
+          input: {
+            locationId,
+            tag
+          }
+        });
     },
-    removeLocations:(params:LocationTag)=>{
-        return axios.post(`${endpoint}/remove`,params);
+    removeLocation:(locationId: string, tag: string)=>{
+        return axios.post(`${endpoint}/remove`, {
+          input: {
+            locationId,
+            tag
+          }
+        });
     }
   }
 }

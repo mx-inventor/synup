@@ -40,8 +40,8 @@ declare const _default: (apiKey: string) => {
         deleteFolder: (name: string) => Promise<import("axios").AxiosResponse<any>>;
     };
     Tags: {
-        addLocations: (params: import("./types/tags").LocationTag) => Promise<import("axios").AxiosResponse<any>>;
-        removeLocations: (params: import("./types/tags").LocationTag) => Promise<import("axios").AxiosResponse<any>>;
+        addLocation: (locationId: string, tag: string) => Promise<import("axios").AxiosResponse<any>>;
+        removeLocation: (locationId: string, tag: string) => Promise<import("axios").AxiosResponse<any>>;
     };
     Listings: {
         getPremium: (locationId: import("./types/listings").Listings) => Promise<import("axios").AxiosResponse<any>>;
