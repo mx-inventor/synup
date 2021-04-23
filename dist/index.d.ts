@@ -48,10 +48,10 @@ declare const _default: (apiKey: string) => {
         getAdittional: (locationId: import("./types/listings").Listings) => Promise<import("axios").AxiosResponse<any>>;
     };
     Rankings: {
-        addKeywordsLocation: (params: import("./types/ranking").Keywords) => Promise<import("axios").AxiosResponse<any>>;
+        addKeywords: (locationId: string, inputKeywords: string[]) => Promise<import("axios").AxiosResponse<any>>;
         listKeywords: (locationId: string) => Promise<import("axios").AxiosResponse<any>>;
         getKeywordsPerformance: (locationId: string, params: import("./types/ranking").KeywordsPermormance) => Promise<import("axios").AxiosResponse<any>>;
-        archiveKeyword: (params: import("./types/ranking").InputArchive) => Promise<import("axios").AxiosResponse<any>>;
+        archiveKeyword: (id: string) => Promise<import("axios").AxiosResponse<any>>;
     };
     Campaigns: {
         create: (locationId: string, name: string, locationCustomers: import("./types/campaigns").Customer[]) => Promise<import("axios").AxiosResponse<any>>;
