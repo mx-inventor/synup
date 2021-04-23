@@ -1,5 +1,5 @@
 export type LocationTag ={
-    input?:{
+    input:{
         locationId?: string,
         tag?: string
     }
