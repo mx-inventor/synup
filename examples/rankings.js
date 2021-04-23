@@ -2,12 +2,7 @@ const synup = require("../dist/index")(process.env.SYNUP_KEY);
 
 const {Rankings} = synup;
 
-  let addKeywords = {
-      locationId: "TG9jYXRpb246MTM5OTg=",
-      inputKeywords: ["road paving", "road building"]
-     }
-
- Rankings.addKeywordsLocation(addKeywords)
+ Rankings.addKeywords("TG9jYXRpb246MTM5OTg=", ["road paving", "road building"])
     .then((response) => {
       console.log(JSON.stringify(response.data));
       console.log("SUCCESS");
