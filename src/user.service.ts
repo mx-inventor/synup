@@ -42,8 +42,8 @@ export default (axios: AxiosInstance) => {
         update: (userId: string, user: User) => {
             return axios.post(endpointUsers + "/update", {
                 input: {
+                    ...user,
                     id:userId,
-                    ...user
                 }
             });
         },

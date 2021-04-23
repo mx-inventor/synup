@@ -50,7 +50,7 @@ exports.default = (function (axios) {
         },
         update: function (userId, user) {
             return axios.post(endpointUsers + "/update", {
-                input: __assign({ id: userId }, user)
+                input: __assign(__assign({}, user), { id: userId })
             });
         },
         removeLocations: function (userId, locationIds) {
