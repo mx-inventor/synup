@@ -22,7 +22,7 @@ export type CustomRole = {
 }
 
 export type CreateUserWithRole = {
-    input?: User ;
+    input: User ;
 };
 
 export type InputLocationUser = {
@@ -31,7 +31,7 @@ export type InputLocationUser = {
 };
 
 export type LocationUser = {
-    input?: InputLocationUser;
+    input: InputLocationUser;
 };
 
 export type InputFolderUser = {
@@ -40,6 +40,6 @@ export type InputFolderUser = {
 }
 
 export type FolderUser = {
-    input?: InputFolderUser;
+    input: InputFolderUser;
 }
 

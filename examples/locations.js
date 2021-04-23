@@ -32,12 +32,7 @@ Locations.search("two")
     console.log("FAILURE search");
   });
 
-Locations.addPhoto("TG9jYXRpb246MTI5Njkw",[
-  {
-    "photo": "https://via.placeholder.com/250.jpg",
-    "type": "ADDITIONAL"
-  }
-] )
+Locations.addPhoto()
 .then((response) => {
   /*console.log(JSON.stringify(response.data));*/
   console.log("SUCCESS addPhoto");
@@ -47,7 +42,7 @@ Locations.addPhoto("TG9jYXRpb246MTI5Njkw",[
   console.log("FAILURE addPhoto");
   });
 
-Locations.deletePhoto("TG9jYXRpb246MTM5NTc=", ["TG9jYXRpb25QaG90bzoxMjI2MA=="])
+Locations.deletePhoto("mild",['locationId','photoIds'])
 .then((response) => {
   /*console.log(JSON.stringify(response.data));*/
   console.log("SUCCESS deletePhoto");
@@ -57,12 +52,7 @@ Locations.deletePhoto("TG9jYXRpb246MTM5NTc=", ["TG9jYXRpb25QaG90bzoxMjI2MA=="])
   console.log("FAILURE deletePhoto");
 });
 
-Locations.updateLocation({
-  "input": {
-    "id": "TG9jYXRpb246MTM2OTc=",
-    "phone": "9910991111"
-  }
-})
+Locations.updateLocation()
 .then((response) => {
   /*console.log(JSON.stringify(response.data));*/
   console.log("SUCCESS updateLocation");

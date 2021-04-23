@@ -1,16 +1,16 @@
 import { AxiosInstance } from "axios";
 declare const _default: (apiKey: string) => {
     Locations: {
-        create: (params: import("./types/location").CreateLocationParams) => Promise<import("axios").AxiosResponse<any>>;
+        create: (location: import("./types/location").Location) => Promise<import("axios").AxiosResponse<any>>;
         getAll: (params?: import("./types/location").GetAllLocationsParams | undefined) => Promise<import("axios").AxiosResponse<any>>;
         getByIds: (ids: string[]) => Promise<import("axios").AxiosResponse<any>>;
         search: (query: string) => Promise<import("axios").AxiosResponse<any>>;
         addPhoto: (locationId: string, photos: string[]) => Promise<import("axios").AxiosResponse<any>>;
         deletePhoto: (locationId: string, photoIds: string[]) => Promise<import("axios").AxiosResponse<any>>;
-        updateLocation: (params: import("./types/location").UpdateLocation) => Promise<import("axios").AxiosResponse<any>>;
-        startPhoto: (input: import("./types/location").StartPhoto) => Promise<import("axios").AxiosResponse<any>>;
+        updateLocation: (locationId: String, location: import("./types/location").Location) => Promise<import("axios").AxiosResponse<any>>;
+        startPhoto: (locationId: string, mediaIds: string[], starred: boolean) => Promise<import("axios").AxiosResponse<any>>;
         archiveLocation: (ids: string[]) => Promise<import("axios").AxiosResponse<any>>;
-        activateLocation: (locationIds: string[]) => Promise<import("axios").AxiosResponse<any>>;
+        activateLocation: (Ids: string[]) => Promise<import("axios").AxiosResponse<any>>;
         subscriptions: (params: import("./types/location").CreateLocationParams) => Promise<import("axios").AxiosResponse<any>>;
     };
     Users: {

@@ -1,12 +1,12 @@
 import { AxiosInstance } from "axios";
-import { CreateLocationParams, DeletePhoto, GetAllLocationsParams, StartPhoto, UpdateLocation } from "./types/location";
+import { CreateLocationParams, GetAllLocationsParams, Location } from "./types/location";
 
 const endpoint = "locations";
 
 export default (axios: AxiosInstance) => {
   return {
-    create: (params: CreateLocationParams) => {
-      return axios.post(endpoint, params);
+    create: (location:Location) => {
+      return axios.post(endpoint, location);
     },
     getAll: (params?: GetAllLocationsParams) => {
       return axios.get(endpoint, { params });
@@ -23,17 +23,17 @@ export default (axios: AxiosInstance) => {
     deletePhoto: (locationId: string, photoIds: Array<string>) => {
       return axios.post(`${endpoint}/photos/remove`, { input:{locationId,photoIds}});
     },
-    updateLocation: (params:UpdateLocation) => {
-      return axios.post(`${endpoint}/update`, params);
+    updateLocation: (locationId: String, location: Location) => {
+      return axios.post(`${endpoint}/update`, {input:{locationId, location}});
     },
-    startPhoto: (input:StartPhoto) => {
-      return axios.post(`${endpoint}/photos/star`, input);
+    startPhoto: (locationId: string, mediaIds: Array<string>, starred:boolean) => {
+      return axios.post(`${endpoint}/photos/star`, {input:{locationId,mediaIds,starred}});
     },
     archiveLocation: (ids: Array<string>) => {
       return axios.post(endpoint + "/archive", {input:{locationIds: ids}});
     },
-    activateLocation: (locationIds: Array<string>) => {
-      return axios.post(endpoint + "/activate", {input:{locationIds}} );
+    activateLocation: (Ids: Array<string>) => {
+      return axios.post(endpoint + "/activate", {input:{Ids}} );
     },
     subscriptions: (params: CreateLocationParams) => {
       return axios.get(endpoint,{params});
