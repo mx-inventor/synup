@@ -28,10 +28,10 @@ declare const _default: (apiKey: string) => {
     Interactions: {
         getByLocationId: (locationId: string, params?: import("./types/interactions").InteractionParams | undefined) => Promise<import("axios").AxiosResponse<any>>;
         getById: (intractionByIds?: string[] | undefined) => Promise<import("axios").AxiosResponse<any>>;
-        respondToAnInteraction: (params: import("./types/interactions").RespondInteraction) => Promise<import("axios").AxiosResponse<any>>;
+        respondToAnInteraction: (interactionId: string, responseContent: string) => Promise<import("axios").AxiosResponse<any>>;
         getSourcesByLocation: (locationId: string) => Promise<import("axios").AxiosResponse<any>>;
-        addInteractionSource: (params: import("./types/interactions").AddInteractionSource) => Promise<import("axios").AxiosResponse<any>>;
-        editInteractionSource: (params: import("./types/interactions").InteractionParams) => Promise<import("axios").AxiosResponse<any>>;
+        addInteractionSource: (locationId: string, siteUrls: import("./types/interactions").Site) => Promise<import("axios").AxiosResponse<any>>;
+        editInteractionSource: (locationId: string, siteUrls: import("./types/interactions").Site) => Promise<import("axios").AxiosResponse<any>>;
     };
     Folders: {
         addLocations: (name: string, locationIds: string[]) => Promise<import("axios").AxiosResponse<any>>;
