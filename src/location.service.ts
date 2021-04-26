@@ -29,11 +29,11 @@ export default (axios: AxiosInstance) => {
     updateLocation: (id: String, phone: string) => {
       return axios.post(`${endpoint}/update`, {input:{id, phone}});
     },
-    startPhoto: (locationId: string, mediaIds: Array<string>, starred:boolean) => {
+    starPhoto: (locationId: string, photoIds: Array<string>, starred:boolean) => {
       return axios.post(`${endpoint}/photos/star`, {
         input:{
           locationId,
-          mediaIds,
+          photoIds,
           starred
         }
       });

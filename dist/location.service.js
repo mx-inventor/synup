@@ -27,11 +27,11 @@ exports.default = (function (axios) {
         updateLocation: function (id, phone) {
             return axios.post(endpoint + "/update", { input: { id: id, phone: phone } });
         },
-        startPhoto: function (locationId, mediaIds, starred) {
+        starPhoto: function (locationId, photoIds, starred) {
             return axios.post(endpoint + "/photos/star", {
                 input: {
                     locationId: locationId,
-                    mediaIds: mediaIds,
+                    photoIds: photoIds,
                     starred: starred
                 }
             });

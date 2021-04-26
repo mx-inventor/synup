@@ -4,7 +4,7 @@ const { Locations } = synup;
 
 let locationId = "TG9jYXRpb246NTIxMzI0"
 
-let mediaIds = ["TWVkaWFGaWxlOjg4MjY5Nw==", "TWVkaWFGaWxlOjg4MjY5OA=="]
+let photoIds = ["TWVkaWFGaWxlOjg4MjY5Nw==", "TWVkaWFGaWxlOjg4MjY5OA=="]
 
 let starred = true
 
@@ -90,7 +90,7 @@ Locations.updateLocation(id,phone)
   console.log("FAILURE updateLocation");
   });
 
-/*Locations.startPhoto(locationId, mediaIds, starred)
+Locations.starPhoto(locationId, photoIds, starred)
 .then((response) => {
   console.log(JSON.stringify(response.data));
   console.log("SUCCESS startPhoto");
@@ -98,7 +98,7 @@ Locations.updateLocation(id,phone)
 .catch((error) => {
   console.log(error);
   console.log("FAILURE startPhoto");
-  });*/
+  });
 
 Locations.archiveLocation()
 .then((response) => {
