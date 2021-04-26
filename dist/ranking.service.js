@@ -3,8 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var endpoint = "locations";
 exports.default = (function (axios) {
     return {
-        addKeywordsLocation: function (params) {
-            return axios.post(endpoint + "/keywords", params);
+        addKeywords: function (locationId, inputKeywords) {
+            return axios.post(endpoint + "/keywords", {
+                input: {
+                    locationId: locationId,
+                    inputKeywords: inputKeywords
+                }
+            });
         },
         listKeywords: function (locationId) {
             return axios.get(endpoint + "/" + locationId + "/keywords");
@@ -12,8 +17,8 @@ exports.default = (function (axios) {
         getKeywordsPerformance: function (locationId, params) {
             return axios.get(endpoint + "/" + { locationId: locationId } + "/keywords-performance", { params: params });
         },
-        archiveKeyword: function (params) {
-            return axios.post(endpoint + "/keywords/archive", params);
+        archiveKeyword: function (id) {
+            return axios.post(endpoint + "/keywords/archive", id);
         }
     };
 });

@@ -41,7 +41,6 @@ export type GetAllLocationsParams = {
 };
 
 export type Photos = {
-  photo: string,
-  type: string,
-}
-
+  photo: string;
+  type: string;
+};

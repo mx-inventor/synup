@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var endpointRoles = "roles";
 var endpointUsers = "users";
@@ -7,14 +18,24 @@ exports.default = (function (axios) {
         getAllRoles: function (params) {
             return axios.get(endpointRoles, { params: params });
         },
-        createWithRole: function (params) {
-            return axios.post(endpointUsers, params);
+        createWithRole: function (user) {
+            return axios.post(endpointUsers, user);
         },
-        addLocation: function (params) {
-            return axios.post(endpointUsers + "/locations/add", params);
+        addLocations: function (userId, locationIds) {
+            return axios.post(endpointUsers + "/locations/add", {
+                input: {
+                    userId: userId,
+                    locationIds: locationIds
+                }
+            });
         },
-        addFolder: function (params) {
-            return axios.post(endpointUsers + "/folders/add", params);
+        addFolders: function (userId, folderIds) {
+            return axios.post(endpointUsers + "/folders/add", {
+                input: {
+                    userId: userId,
+                    folderIds: folderIds
+                }
+            });
         },
         getAll: function (params) {
             return axios.get(endpointUsers, { params: params });
@@ -27,14 +48,26 @@ exports.default = (function (axios) {
                 params: { userIds: userIds }
             });
         },
-        updateUser: function (params) {
-            return axios.post(endpointUsers + "/update", params);
+        update: function (userId, user) {
+            return axios.post(endpointUsers + "/update", {
+                input: __assign(__assign({}, user), { id: userId })
+            });
         },
-        removeLocation: function (params) {
-            return axios.post(endpointUsers + "/locations/remove", params);
+        removeLocations: function (userId, locationIds) {
+            return axios.post(endpointUsers + "/locations/remove", {
+                input: {
+                    userId: userId,
+                    locationIds: locationIds
+                }
+            });
         },
-        removeFolder: function (params) {
-            return axios.post(endpointUsers + "/folders/remove", params);
+        removeFolders: function (userId, folderIds) {
+            return axios.post(endpointUsers + "/folders/remove", {
+                input: {
+                    userId: userId,
+                    folderIds: folderIds
+                }
+            });
         }
     };
 });

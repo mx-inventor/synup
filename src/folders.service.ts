@@ -1,24 +1,41 @@
 import { AxiosInstance } from "axios";
-import { AddLocationsPropierties,RenameParams,RemoveLocations,DeleteFolder } from "./types/folders";
 
 const endpoint = 'locations/folders';
 
 export default (axios: AxiosInstance) => {
   return {
-    addLocations:(params:AddLocationsPropierties)=>{
-        return axios.post(`${endpoint}`, params);
+    addLocations:(name:string, locationIds:Array<string>)=>{
+        return axios.post(`${endpoint}`,{
+          input:{
+            name,
+            locationIds
+          }
+        });
     },
 
-    rename:(params:RenameParams)=>{
-      return axios.post(`${endpoint}/rename`,params);
+    rename:(name:string, id:Array<string>)=>{
+      return axios.post(`${endpoint}/rename`,{
+        input:{
+          name,
+          id
+        }
+      });
     },
 
-    removeLocation:(params:RemoveLocations)=>{
-      return axios.post(`${endpoint}/remove`,params);
+    removeLocation:(locationIds:Array<string>)=>{
+      return axios.post(`${endpoint}/remove`,{
+        input:{
+          locationIds
+        }
+      });
     },
 
-    deleteFolder:(params:DeleteFolder)=>{
-      return axios.post(`folders/remove`,params);
+    deleteFolder:(name:string)=>{
+      return axios.post(`folders/remove`,{
+        input:{
+          name
+        }
+      });
     }
   };
 };
