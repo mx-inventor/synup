@@ -2,6 +2,34 @@ const synup = require("../dist/index")(process.env.SYNUP_KEY);
 
 const { Locations } = synup;
 
+let locationId = "TG9jYXRpb246NTIxMzI0"
+
+let mediaIds = ["TWVkaWFGaWxlOjg4MjY5Nw==", "TWVkaWFGaWxlOjg4MjY5OA=="]
+
+let starred = true
+
+let id = "TG9jYXRpb246MTM2OTc="
+
+let phone = "9910991111"
+
+let photos = [
+  {
+    "photo": "https://via.placeholder.com/250.jpg",
+    "type": "ADDITIONAL"
+  }
+]
+
+
+Locations.listLocations()
+.then((response) => {
+  /*console.log(JSON.stringify(response.data));*/
+  console.log("SUCCESS listLocations");
+})
+.catch((error) => {
+  /*console.log(error);*/
+  console.log("FAILURE listLocations");
+});
+
 Locations.getAll()
   .then((response) => {
     /*console.log(JSON.stringify(response.data));*/
@@ -32,7 +60,7 @@ Locations.search("two")
     console.log("FAILURE search");
   });
 
-Locations.addPhoto()
+Locations.addPhoto(locationId,photos)
 .then((response) => {
   /*console.log(JSON.stringify(response.data));*/
   console.log("SUCCESS addPhoto");
@@ -52,7 +80,7 @@ Locations.deletePhoto("mild",['locationId','photoIds'])
   console.log("FAILURE deletePhoto");
 });
 
-Locations.updateLocation()
+Locations.updateLocation(id,phone)
 .then((response) => {
   /*console.log(JSON.stringify(response.data));*/
   console.log("SUCCESS updateLocation");
@@ -62,15 +90,15 @@ Locations.updateLocation()
   console.log("FAILURE updateLocation");
   });
 
-Locations.startPhoto()
+/*Locations.startPhoto(locationId, mediaIds, starred)
 .then((response) => {
-  /*console.log(JSON.stringify(response.data));*/
+  console.log(JSON.stringify(response.data));
   console.log("SUCCESS startPhoto");
 })
 .catch((error) => {
-  /*console.log(error);*/
+  console.log(error);
   console.log("FAILURE startPhoto");
-  });
+  });*/
 
 Locations.archiveLocation()
 .then((response) => {

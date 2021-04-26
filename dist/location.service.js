@@ -6,6 +6,9 @@ exports.default = (function (axios) {
         create: function (location) {
             return axios.post(endpoint, location);
         },
+        listLocations: function (params) {
+            return axios.get(endpoint, { params: params });
+        },
         getAll: function (params) {
             return axios.get(endpoint, { params: params });
         },
@@ -21,11 +24,17 @@ exports.default = (function (axios) {
         deletePhoto: function (locationId, photoIds) {
             return axios.post(endpoint + "/photos/remove", { input: { locationId: locationId, photoIds: photoIds } });
         },
-        updateLocation: function (locationId, location) {
-            return axios.post(endpoint + "/update", { input: { locationId: locationId, location: location } });
+        updateLocation: function (id, phone) {
+            return axios.post(endpoint + "/update", { input: { id: id, phone: phone } });
         },
         startPhoto: function (locationId, mediaIds, starred) {
-            return axios.post(endpoint + "/photos/star", { input: { locationId: locationId, mediaIds: mediaIds, starred: starred } });
+            return axios.post(endpoint + "/photos/star", {
+                input: {
+                    locationId: locationId,
+                    mediaIds: mediaIds,
+                    starred: starred
+                }
+            });
         },
         archiveLocation: function (ids) {
             return axios.post(endpoint + "/archive", { input: { locationIds: ids } });
@@ -33,8 +42,8 @@ exports.default = (function (axios) {
         activateLocation: function (Ids) {
             return axios.post(endpoint + "/activate", { input: { Ids: Ids } });
         },
-        subscriptions: function (params) {
-            return axios.get(endpoint, { params: params });
+        subscriptions: function () {
+            return axios.get('subscriptions');
         },
     };
 });

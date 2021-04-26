@@ -40,12 +40,8 @@ export type GetAllLocationsParams = {
   last?: any;
 };
 
-export type CreateLocationParams = {};
+export type Photos = {
+  photo: string,
+  type: string,
+}
 
-export type AddPhoto = {};
-
-export type DeletePhoto = {};
-
-export type UpdateLocation = {};
-
-export type StartPhoto = {};
