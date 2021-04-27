@@ -24,8 +24,8 @@ exports.default = (function (axios) {
         deletePhotos: function (locationId, photoIds) {
             return axios.post(endpoint + "/photos/remove", { input: { locationId: locationId, photoIds: photoIds } });
         },
-        updateLocation: function (id, phone) {
-            return axios.post(endpoint + "/update", { input: { id: id, phone: phone } });
+        updateLocation: function (id, locationData) {
+            return axios.post(endpoint + "/update", { input: { id: id, locationData: locationData } });
         },
         starPhotos: function (locationId, photoIds, starred) {
             return axios.post(endpoint + "/photos/star", {

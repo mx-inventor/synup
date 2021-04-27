@@ -10,8 +10,6 @@ let starred = true
 
 let id = "TG9jYXRpb246MTM2OTc="
 
-let phone = "9910991111"
-
 let photos = [
   {
     "photo": "https://via.placeholder.com/250.jpg",
@@ -80,7 +78,7 @@ Locations.deletePhotos("mild",['locationId','photoIds'])
   console.log("FAILURE deletePhoto");
 });
 
-Locations.updateLocation(id,{phone})
+Locations.updateLocation(id)
 .then((response) => {
   /*console.log(JSON.stringify(response.data));*/
   console.log("SUCCESS updateLocation");

@@ -26,8 +26,8 @@ export default (axios: AxiosInstance) => {
     deletePhotos: (locationId: string, photoIds: Array<string>) => {
       return axios.post(`${endpoint}/photos/remove`, { input:{locationId,photoIds}});
     },
-    updateLocation: (id: String, phone: Location) => {
-      return axios.post(`${endpoint}/update`, {input:{id, phone}});
+    updateLocation: (id: String, locationData: Location) => {
+      return axios.post(`${endpoint}/update`, {input:{id, locationData}});
     },
     starPhotos: (locationId: string, photoIds: Array<string>, starred:boolean) => {
       return axios.post(`${endpoint}/photos/star`, {
