@@ -40,26 +40,8 @@ export type GetAllLocationsParams = {
   last?: any;
 };
 
-export type CreateLocationParams = {
-  input: Location;
-};
+export type Photo = {
+  photo: string,
+  type: string,
+}
 
-export type AddPhoto = {
-  locationId:string;
-  photos:Array<string>;
-};
-
-export type DeletePhoto = {
-  locationId:string;
-  photosIds: Array<string>; 
-};
-
-export type UpdateLocation = {
-  input:Location;
-};
-
-export type StartPhoto = {
-  locationId:string;
-  mediaIds:[string];
-  starred:Boolean;
-};

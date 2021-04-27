@@ -2,6 +2,32 @@ const synup = require("../dist/index")(process.env.SYNUP_KEY);
 
 const { Locations } = synup;
 
+let locationId = "TG9jYXRpb246NTIxMzI0"
+
+let photoIds = ["TWVkaWFGaWxlOjg4MjY5Nw==", "TWVkaWFGaWxlOjg4MjY5OA=="]
+
+let starred = true
+
+let id = "TG9jYXRpb246MTM2OTc="
+
+let photos = [
+  {
+    "photo": "https://via.placeholder.com/250.jpg",
+    "type": "ADDITIONAL"
+  }
+]
+
+
+Locations.listLocations()
+.then((response) => {
+  /*console.log(JSON.stringify(response.data));*/
+  console.log("SUCCESS listLocations");
+})
+.catch((error) => {
+  /*console.log(error);*/
+  console.log("FAILURE listLocations");
+});
+
 Locations.getAll()
   .then((response) => {
     /*console.log(JSON.stringify(response.data));*/
@@ -32,12 +58,7 @@ Locations.search("two")
     console.log("FAILURE search");
   });
 
-Locations.addPhoto("TG9jYXRpb246MTI5Njkw",[
-  {
-    "photo": "https://via.placeholder.com/250.jpg",
-    "type": "ADDITIONAL"
-  }
-] )
+Locations.addPhotos(locationId,photos)
 .then((response) => {
   /*console.log(JSON.stringify(response.data));*/
   console.log("SUCCESS addPhoto");
@@ -47,7 +68,7 @@ Locations.addPhoto("TG9jYXRpb246MTI5Njkw",[
   console.log("FAILURE addPhoto");
   });
 
-Locations.deletePhoto("TG9jYXRpb246MTM5NTc=", ["TG9jYXRpb25QaG90bzoxMjI2MA=="])
+Locations.deletePhotos("mild",['locationId','photoIds'])
 .then((response) => {
   /*console.log(JSON.stringify(response.data));*/
   console.log("SUCCESS deletePhoto");
@@ -57,12 +78,7 @@ Locations.deletePhoto("TG9jYXRpb246MTM5NTc=", ["TG9jYXRpb25QaG90bzoxMjI2MA=="])
   console.log("FAILURE deletePhoto");
 });
 
-Locations.updateLocation({
-  "input": {
-    "id": "TG9jYXRpb246MTM2OTc=",
-    "phone": "9910991111"
-  }
-})
+Locations.updateLocation(id)
 .then((response) => {
   /*console.log(JSON.stringify(response.data));*/
   console.log("SUCCESS updateLocation");
@@ -72,13 +88,13 @@ Locations.updateLocation({
   console.log("FAILURE updateLocation");
   });
 
-Locations.startPhoto()
+Locations.starPhotos(locationId, photoIds, starred)
 .then((response) => {
-  /*console.log(JSON.stringify(response.data));*/
+  console.log(JSON.stringify(response.data));
   console.log("SUCCESS startPhoto");
 })
 .catch((error) => {
-  /*console.log(error);*/
+  console.log(error);
   console.log("FAILURE startPhoto");
   });
 

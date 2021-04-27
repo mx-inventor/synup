@@ -1,17 +1,18 @@
 import { AxiosInstance } from "axios";
 declare const _default: (apiKey: string) => {
     Locations: {
-        create: (params: import("./types/location").CreateLocationParams) => Promise<import("axios").AxiosResponse<any>>;
+        create: (location: import("./types/location").Location) => Promise<import("axios").AxiosResponse<any>>;
+        listLocations: (params?: import("./types/location").GetAllLocationsParams | undefined) => Promise<import("axios").AxiosResponse<any>>;
         getAll: (params?: import("./types/location").GetAllLocationsParams | undefined) => Promise<import("axios").AxiosResponse<any>>;
         getByIds: (ids: string[]) => Promise<import("axios").AxiosResponse<any>>;
         search: (query: string) => Promise<import("axios").AxiosResponse<any>>;
-        addPhoto: (locationId: string, photos: string[]) => Promise<import("axios").AxiosResponse<any>>;
-        deletePhoto: (locationId: string, photoIds: string[]) => Promise<import("axios").AxiosResponse<any>>;
-        updateLocation: (params: import("./types/location").UpdateLocation) => Promise<import("axios").AxiosResponse<any>>;
-        startPhoto: (input: import("./types/location").StartPhoto) => Promise<import("axios").AxiosResponse<any>>;
+        addPhotos: (locationId: string, photos: import("./types/location").Photo[]) => Promise<import("axios").AxiosResponse<any>>;
+        deletePhotos: (locationId: string, photoIds: string[]) => Promise<import("axios").AxiosResponse<any>>;
+        updateLocation: (id: String, locationData: import("./types/location").Location) => Promise<import("axios").AxiosResponse<any>>;
+        starPhotos: (locationId: string, photoIds: string[], starred: boolean) => Promise<import("axios").AxiosResponse<any>>;
         archiveLocation: (ids: string[]) => Promise<import("axios").AxiosResponse<any>>;
-        activateLocation: (locationIds: string[]) => Promise<import("axios").AxiosResponse<any>>;
-        subscriptions: (params: import("./types/location").CreateLocationParams) => Promise<import("axios").AxiosResponse<any>>;
+        activateLocation: (ids: string[]) => Promise<import("axios").AxiosResponse<any>>;
+        subscriptions: () => Promise<import("axios").AxiosResponse<any>>;
     };
     Users: {
         getAllRoles: (params: import("./types/User").User) => Promise<import("axios").AxiosResponse<any>>;
