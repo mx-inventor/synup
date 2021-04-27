@@ -15,7 +15,6 @@ Users.getAllRoles()
 
 //CREATE USER WITH ROLE
 let userRole = {
-  input:{
       id: "VXNlcjozNTUyOQ==",
       email:"mk@orthopreneur.com",
       roleId:"Q3VzdG9tUm9sZTo3Mjc1NA==",
@@ -27,7 +26,6 @@ let userRole = {
         name: "Client"
       },
   }
-}
 
 Users.createWithRole(userRole)
   .then((response) => {
@@ -40,14 +38,7 @@ Users.createWithRole(userRole)
   });
 
 //ADD LOCATION TO USER
-let userLocation = {
-  input:{
-      userId:"VXNlcjoxMDAyOA==",
-      locationIds:["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246NDI1ODg="]
-  }
-}
-
-Users.addLocation(userLocation)
+Users.addLocations("VXNlcjoxMDAyOA==",["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246NDI1ODg="])
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -58,14 +49,7 @@ Users.addLocation(userLocation)
   });
 
 //ADD FOLDERS TO USER
-let userFolder = {
-  input:{
-       userId:"VXNlcjoxMDAyOA==",
-      folderIds:["c1d92c09-8ddd-469e-af96-0eb64a48d647","a5af4f5d-41b6-4a8a-b24f-98741b021b7b"]
-  }
-}
-
-Users.addFolder(userFolder)
+Users.addFolders("VXNlcjoxMDAyOA==", ["c1d92c09-8ddd-469e-af96-0eb64a48d647","a5af4f5d-41b6-4a8a-b24f-98741b021b7b"])
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -113,8 +97,7 @@ Users.listByIds(userIds)
   });
 
 //UPDATE A USER
-let userUpdate = {
-  input:{
+let user = {
       id:"VXNlcjo5OTY0",
       email:"pttqa1+4186@gmail.com",
       roleId:"Q3VzdG9tUm9sZToxNzc4Mw==",
@@ -123,10 +106,9 @@ let userUpdate = {
       phone:"",
       archived:false,
       directCustomer:true
-  }
 }
 
-Users.updateUser(userUpdate)
+Users.update("VXNlcjoxMDAyOA==", user)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -137,7 +119,7 @@ Users.updateUser(userUpdate)
   });
 
 //REMOVE LOCATION FOR A USER
-Users.removeLocation(userLocation)
+Users.removeLocations("VXNlcjoxMDAyOA==",["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246NDI1ODg="])
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -148,7 +130,7 @@ Users.removeLocation(userLocation)
   });
 
 //REMOVE FOLDERS A USER
-Users.removeFolder(userFolder)
+Users.removeFolders("VXNlcjoxMDAyOA==", ["c1d92c09-8ddd-469e-af96-0eb64a48d647","a5af4f5d-41b6-4a8a-b24f-98741b021b7b"])
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");

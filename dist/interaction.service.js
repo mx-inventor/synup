@@ -11,17 +11,26 @@ exports.default = (function (axios) {
                 params: { interactionIds: intractionByIds }
             });
         },
-        respondToAnInteraction: function (params) {
-            return axios.post(endpoint + "/reviews/respond", params);
+        respondToAnInteraction: function (interactionId, responseContent) {
+            return axios.post(endpoint + "/reviews/respond", {
+                interactionId: interactionId,
+                responseContent: responseContent
+            });
         },
         getSourcesByLocation: function (locationId) {
             return axios.get(endpoint + "/" + locationId + "/reviews/settings");
         },
-        addInteractionSource: function (params) {
-            return axios.post(endpoint + "/reviews/settings/edit", params);
+        addInteractionSource: function (locationId, siteUrls) {
+            return axios.post(endpoint + "/reviews/settings/edit", {
+                locationId: locationId,
+                siteUrls: siteUrls
+            });
         },
-        editInteractionSource: function (params) {
-            return axios.post(endpoint + "/reviews/settings/edit", params);
+        editInteractionSource: function (locationId, siteUrls) {
+            return axios.post(endpoint + "/reviews/settings/edit", {
+                locationId: locationId,
+                siteUrls: siteUrls
+            });
         }
     };
 });

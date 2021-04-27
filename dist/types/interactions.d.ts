@@ -60,11 +60,6 @@ export type Responses ={
     responseStatus?: string
 }
 
-export type RespondInteraction ={
-    interactionid?: string,
-    responseContent?: string
-}
-
 //type to respond to an interaction
 export type Interaction ={
     interactionId?: string,
@@ -74,11 +69,6 @@ export type Interaction ={
     authorAvatar?: string,
     date?: string,
     interactionStatus?: string
-}
-
-export type AddInteractionSource ={
-    locationId?:string,
-    siteUrls?:Array<Site>
 }
 
 export type Site ={

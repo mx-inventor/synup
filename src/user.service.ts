@@ -1,5 +1,5 @@
 import{AxiosInstance} from "axios";
-import{CreateUserWithRole, User, LocationUser, FolderUser} from "./types/User";
+import{User} from "./types/User";
 
 const endpointRoles = "roles";
 const endpointUsers = "users";
@@ -9,14 +9,24 @@ export default (axios: AxiosInstance) => {
         getAllRoles: (params: User) =>{
             return axios.get(endpointRoles, {params});
         },
-        createWithRole: (params: CreateUserWithRole) => {
-            return axios.post(endpointUsers, params);
+        createWithRole: (user: User) => {
+            return axios.post(endpointUsers, user);
         },
-        addLocation: (params: LocationUser) => {
-            return axios.post(endpointUsers + "/locations/add", params);
+        addLocations: (userId: string, locationIds: Array<string>) => {
+            return axios.post(endpointUsers + "/locations/add", { 
+                input: {
+                    userId,
+                    locationIds
+                }
+            });
         },
-        addFolder: (params: FolderUser) => {
-            return axios.post(endpointUsers + "/folders/add", params);
+        addFolders: (userId: string, folderIds: Array<string>) => {
+            return axios.post(endpointUsers + "/folders/add",{
+                input: {
+                    userId,
+                    folderIds
+                }
+            });
         },
         getAll: (params: User) =>{
             return axios.get(endpointUsers, {params});
@@ -29,14 +39,29 @@ export default (axios: AxiosInstance) => {
                 params: {userIds:userIds}
             })
         },
-        updateUser: (params: User) => {
-            return axios.post(endpointUsers + "/update", params);
+        update: (userId: string, user: User) => {
+            return axios.post(endpointUsers + "/update", {
+                input: {
+                    ...user,
+                    id:userId,
+                }
+            });
         },
-        removeLocation: (params: LocationUser) => {
-            return axios.post(endpointUsers + "/locations/remove", params);
+        removeLocations: (userId: string, locationIds: Array<string>) => {
+            return axios.post(endpointUsers + "/locations/remove", {
+                input: {
+                    userId,
+                    locationIds
+                }
+            });
         },
-        removeFolder: (params: FolderUser ) => {
-            return axios.post(endpointUsers + "/folders/remove", params)
+        removeFolders: (userId: string, folderIds: Array<string> ) => {
+            return axios.post(endpointUsers + "/folders/remove", {
+                input: {
+                    userId,
+                    folderIds
+                }
+            })
         }
     }
 }

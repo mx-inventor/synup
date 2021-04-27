@@ -1,28 +1,14 @@
 const synup = require("../dist/index")(process.env.SYNUP_KEY);
 
 const { Interactions } = synup;
-let locationId = "TWVkaWFGaWxlOjEzMDMzMg=="; 
 
-let respondInteraction ={
-  interactionId: "2090753a-ece6-4837-8336-8494ad308523",
-  responseContent:"This is a sample response"
-};
+let interactionId= "2090753a-ece6-4837-8336-8494ad308523"
+let responseContent="This is a sample response"
 
 let interactionById= ['b2fa765e-c62b-4e0b-b1d6-1c67c855f5e0'];
 
-let addInteraction ={  
-  locationId:"TG9jYXRpb246MTY4MDU=",
-  siteUrls:[  
-     {  
-        name:"trulia.com",
-        url:"test.com"
-     }
-  ]
-};
-
-let editInteraction ={  
-  "locationId":"TG9jYXRpb246MTY4MDU=",
-  "siteUrls":[  
+let locationId="TG9jYXRpb246MTY4MDU="
+let siteUrls=[  
      {  
         "name":"yelloyello.com",
         "url":"https://www.yelloyello.com/places/tryvexan..."
@@ -39,8 +25,7 @@ let editInteraction ={
         "name":"maps.google.com",
         "url":"https://www.google.com/maps/place/Foxy's+Landing..."
      }
-  ]
-}; 
+]
 
 
 Interactions.getByLocationId(locationId)
@@ -63,7 +48,7 @@ Interactions.getById(interactionById)
     console.log("FAILURE");
   });
 
-Interactions.respondToAnInteraction(respondInteraction)
+Interactions.respondToAnInteraction(interactionId,responseContent)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -83,7 +68,7 @@ Interactions.getSourcesByLocation(locationId)
     console.log("FAILURE");
   });
 
-Interactions.addInteractionSource(addInteraction)
+Interactions.addInteractionSource(locationId, siteUrls)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -93,7 +78,7 @@ Interactions.addInteractionSource(addInteraction)
     console.log("FAILURE");
   }); 
 
-Interactions.editInteractionSource(editInteraction)
+Interactions.editInteractionSource(locationId, siteUrls)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");

@@ -1,8 +1,3 @@
-export type Keywords = {
-    locationId?: string;
-    inputKeywords?: Array<string>
-}
-
 export type KeywordsPermormance = {
     locationId?: string;
     fromDate?: any;
@@ -25,8 +20,4 @@ export type Rankings = {
     rank?: number;
     rankeAt?: any;
     matchUrl?: string;
-}
-
-export type InputArchive = {
-    id?: string;
 }
