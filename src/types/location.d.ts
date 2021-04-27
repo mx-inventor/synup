@@ -40,7 +40,7 @@ export type GetAllLocationsParams = {
   last?: any;
 };
 
-export type Photos = {
+export type Photo = {
   photo: string,
   type: string,
 }

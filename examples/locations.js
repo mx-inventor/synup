@@ -60,7 +60,7 @@ Locations.search("two")
     console.log("FAILURE search");
   });
 
-Locations.addPhoto(locationId,photos)
+Locations.addPhotos(locationId,photos)
 .then((response) => {
   /*console.log(JSON.stringify(response.data));*/
   console.log("SUCCESS addPhoto");
@@ -70,7 +70,7 @@ Locations.addPhoto(locationId,photos)
   console.log("FAILURE addPhoto");
   });
 
-Locations.deletePhoto("mild",['locationId','photoIds'])
+Locations.deletePhotos("mild",['locationId','photoIds'])
 .then((response) => {
   /*console.log(JSON.stringify(response.data));*/
   console.log("SUCCESS deletePhoto");
@@ -80,7 +80,7 @@ Locations.deletePhoto("mild",['locationId','photoIds'])
   console.log("FAILURE deletePhoto");
 });
 
-Locations.updateLocation(id,phone)
+Locations.updateLocation(id,{phone})
 .then((response) => {
   /*console.log(JSON.stringify(response.data));*/
   console.log("SUCCESS updateLocation");
@@ -90,7 +90,7 @@ Locations.updateLocation(id,phone)
   console.log("FAILURE updateLocation");
   });
 
-Locations.starPhoto(locationId, photoIds, starred)
+Locations.starPhotos(locationId, photoIds, starred)
 .then((response) => {
   console.log(JSON.stringify(response.data));
   console.log("SUCCESS startPhoto");

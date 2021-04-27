@@ -18,16 +18,16 @@ exports.default = (function (axios) {
         search: function (query) {
             return axios.get(endpoint + "/search", { params: { query: query } });
         },
-        addPhoto: function (locationId, photos) {
+        addPhotos: function (locationId, photos) {
             return axios.post(endpoint + "/photos", { input: { locationId: locationId, photos: photos } });
         },
-        deletePhoto: function (locationId, photoIds) {
+        deletePhotos: function (locationId, photoIds) {
             return axios.post(endpoint + "/photos/remove", { input: { locationId: locationId, photoIds: photoIds } });
         },
         updateLocation: function (id, phone) {
             return axios.post(endpoint + "/update", { input: { id: id, phone: phone } });
         },
-        starPhoto: function (locationId, photoIds, starred) {
+        starPhotos: function (locationId, photoIds, starred) {
             return axios.post(endpoint + "/photos/star", {
                 input: {
                     locationId: locationId,
@@ -39,8 +39,8 @@ exports.default = (function (axios) {
         archiveLocation: function (ids) {
             return axios.post(endpoint + "/archive", { input: { locationIds: ids } });
         },
-        activateLocation: function (Ids) {
-            return axios.post(endpoint + "/activate", { input: { Ids: Ids } });
+        activateLocation: function (ids) {
+            return axios.post(endpoint + "/activate", { input: { ids: ids } });
         },
         subscriptions: function () {
             return axios.get('subscriptions');
