@@ -19,7 +19,9 @@ exports.default = (function (axios) {
             return axios.get(endpointRoles, { params: params });
         },
         createWithRole: function (user) {
-            return axios.post(endpointUsers, user);
+            return axios.post(endpointUsers + "/create", {
+                input: __assign({}, user)
+            });
         },
         addLocations: function (userId, locationIds) {
             return axios.post(endpointUsers + "/locations/add", {

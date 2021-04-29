@@ -14,17 +14,11 @@ Users.getAllRoles()
   });
 
 //CREATE USER WITH ROLE
-let userRole = {
-      id: "VXNlcjozNTUyOQ==",
-      email:"mk@orthopreneur.com",
-      roleId:"Q3VzdG9tUm9sZTo3Mjc1NA==",
-      firstName:"Mary Kay Miller",
-      directCustomer:false,
-      lastName: null,
-      customRole: {
-        id: "Q3VzdG9tUm9sZTo3Mjc1NA==",
-        name: "Client"
-      },
+let userRole ={
+      email:"pttqa1+2984@gmail.com",
+      roleId:"Q3VzdG9tUm9sZToyMDgzMQ==",
+      firstName:"pttqa1+2984",
+      directCustomer:true
   }
 
 Users.createWithRole(userRole)

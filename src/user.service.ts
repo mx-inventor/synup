@@ -10,7 +10,11 @@ export default (axios: AxiosInstance) => {
             return axios.get(endpointRoles, {params});
         },
         createWithRole: (user: User) => {
-            return axios.post(endpointUsers, user);
+            return axios.post(endpointUsers + "/create", {
+                input: {
+                    ...user
+                }
+            });
         },
         addLocations: (userId: string, locationIds: Array<string>) => {
             return axios.post(endpointUsers + "/locations/add", { 
