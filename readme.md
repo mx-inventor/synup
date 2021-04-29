@@ -1,9 +1,34 @@
-# Synup
+# Synup Module
 
-## Build
+Synup API client library, connected to [https://developer.synup.com/docs/#/](https://developer.synup.com/docs/#/)
 
-yarn build
+## How to use
 
-## Run example
+Install the module
 
-node examples/exampleName.js
+    npm install @mx-inventor/synup
+
+or
+
+    yarn add @mx-inventor/synup
+
+Then import module
+
+    const synup = require('@mx-inventor/synup')('SYNUP_API_KEY');
+
+    const {
+        Analytics,
+        Campaigns,
+        Folders,
+        Interactions,
+        Listings,
+        Locations,
+        Places,
+        Rankings,
+        Tags,
+        Users
+    } = synup;
+
+    Locations.getAll().then(locations=>{
+        // logic with locations
+    });

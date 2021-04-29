@@ -23,16 +23,16 @@ export = (apiKey: string) => {
   }
 
   return {
-    Locations: location(_axios),
-    Users: user(_axios),
-    Interactions: interactions(_axios),
-    Folders: folders(_axios),
-    Tags: tags(_axios),
-    Listings: listings(_axios),
-    Rankings: ranking(_axios),
-    Campaigns: campaigns(_axios),
-    Places: places(_axios),
     Analytics: analytics(_axios),
+    Campaigns: campaigns(_axios),
+    Folders: folders(_axios),
+    Interactions: interactions(_axios),
+    Listings: listings(_axios),
+    Locations: location(_axios),
+    Places: places(_axios),
+    Rankings: ranking(_axios),
+    Tags: tags(_axios),
+    Users: user(_axios),
     _axios,
   };
 };
