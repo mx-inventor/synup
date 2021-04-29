@@ -3,7 +3,7 @@ const synup = require("../dist/index")(process.env.SYNUP_KEY);
 const { Users } = synup;
 
 //LIST USER ROLES
-/*Users.getAllRoles()
+Users.getAllRoles()
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -11,7 +11,7 @@ const { Users } = synup;
   .catch((error) => {
     console.log(error);
     console.log("FAILURE");
-  });*/
+  });
 
 //CREATE USER WITH ROLE
 let userRole ={
@@ -32,7 +32,7 @@ Users.createWithRole(userRole)
   });
 
 //ADD LOCATION TO USER
-/*Users.addLocations("VXNlcjoxMDAyOA==",["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246NDI1ODg="])
+Users.addLocations("VXNlcjoxMDAyOA==",["TG9jYXRpb246NDA5ODE=", "TG9jYXRpb246NDI1ODg="])
   .then((response) => {
     console.log(JSON.stringify(response.data));
     console.log("SUCCESS");
@@ -132,4 +132,4 @@ Users.removeFolders("VXNlcjoxMDAyOA==", ["c1d92c09-8ddd-469e-af96-0eb64a48d647",
   .catch((error) => {
     console.log(error);
     console.log("FAILURE");
-  });*/
+  });
