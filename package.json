@@ -1,6 +1,6 @@
 {
   "name": "@mx-inventor/synup",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Synup API client library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
