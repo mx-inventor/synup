@@ -1,24 +1,20 @@
 const synup = require("../dist/index")(process.env.SYNUP_KEY);
 
 const { Listings } = synup;
-let locationId = "TG9jYXRpb246MTQwMjQ="; 
+let locationId = "TG9jYXRpb246MTQwMjQ=";
 
 Listings.getPremium(locationId)
   .then((response) => {
-    console.log(JSON.stringify(response.data));
-    console.log("SUCCESS");
+    console.log("SUCCESS getPremium", response);
   })
   .catch((error) => {
-    console.log(error);
-    console.log("FAILURE");
+    console.log("FAILURE getPremium", error);
   });
 
 Listings.getAdittional(locationId)
-.then((response) => {
-    console.log(JSON.stringify(response.data));
-    console.log("SUCCESS");
+  .then((response) => {
+    console.log("SUCCESS getAdittional", response);
   })
   .catch((error) => {
-    console.log(error);
-    console.log("FAILURE");
+    console.log("FAILURE getAdittional", error);
   });

@@ -1,49 +1,41 @@
 const synup = require("../dist/index")(process.env.SYNUP_KEY);
 
-const {Rankings} = synup;
+const { Rankings } = synup;
 
- Rankings.addKeywords("TG9jYXRpb246MTM5OTg=", ["road paving", "road building"])
-    .then((response) => {
-      console.log(JSON.stringify(response.data));
-      console.log("SUCCESS");
-    })
-    .catch((error) => {
-      console.log(error);
-      console.log("FAILURE");
+Rankings.addKeywords("TG9jYXRpb246MTM5OTg=", ["road paving", "road building"])
+  .then((response) => {
+    console.log("SUCCESS addKeywords", response);
+  })
+  .catch((error) => {
+    console.log("FAILURE addKeywords", error);
   });
 
- Rankings.listKeywords()
- .then((response) => {
-     console.log(JSON.stringify(response.data));
-     console.log("SUCCESS");
-   })
-   .catch((error) => {
-     console.log(error);
-     console.log("FAILURE");
+Rankings.listKeywords()
+  .then((response) => {
+    console.log("SUCCESS listKeywords", response);
+  })
+  .catch((error) => {
+    console.log("FAILURE listKeywords", error);
   });
 
 let locationId = "TG9jYXRpb246MjE5MjMx";
 
 Rankings.getKeywordsPerformance(locationId)
-.then((response) => {
-    console.log(JSON.stringify(response.data));
-    console.log("SUCCESS");
+  .then((response) => {
+    console.log("SUCCESS getKeywordsPerformance", response);
   })
   .catch((error) => {
-    console.log(error);
-    console.log("FAILURE");
+    console.log("FAILURE getKeywordsPerformance", error);
   });
 
- let archiveKeyword = {
-     id: "S2V5d29yZDo3NjQzMTE="
- }
+let archiveKeyword = {
+  id: "S2V5d29yZDo3NjQzMTE=",
+};
 
- Rankings.archiveKeyword(archiveKeyword)
- .then((response) => {
-     console.log(JSON.stringify(response.data));
-     console.log("SUCCESS");
-   })
-   .catch((error) => {
-     console.log(error);
-     console.log("FAILURE");
-   });
+Rankings.archiveKeyword(archiveKeyword)
+  .then((response) => {
+    console.log("SUCCESS archiveKeyword", response);
+  })
+  .catch((error) => {
+    console.log("FAILURE archiveKeyword", error);
+  });

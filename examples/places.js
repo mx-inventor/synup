@@ -1,13 +1,11 @@
 const synup = require("../dist/index")(process.env.SYNUP_KEY);
 
-const {Places} = synup;
+const { Places } = synup;
 
 Places.getPlaces()
-.then((response) => {
-    console.log(JSON.stringify(response.data));
-    console.log("SUCCESS");
+  .then((response) => {
+    console.log("SUCCESS", response);
   })
   .catch((error) => {
-    console.log(error);
-    console.log("FAILURE");
-});
+    console.log("FAILURE", error);
+  });

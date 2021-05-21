@@ -2,128 +2,106 @@ const synup = require("../dist/index")(process.env.SYNUP_KEY);
 
 const { Locations } = synup;
 
-let locationId = "TG9jYXRpb246NTIxMzI0"
+let locationId = "TG9jYXRpb246NTIxMzI0";
 
-let photoIds = ["TWVkaWFGaWxlOjg4MjY5Nw==", "TWVkaWFGaWxlOjg4MjY5OA=="]
+let photoIds = ["TWVkaWFGaWxlOjg4MjY5Nw==", "TWVkaWFGaWxlOjg4MjY5OA=="];
 
-let starred = true
+let starred = true;
 
-let id = "TG9jYXRpb246MTM2OTc="
+let id = "TG9jYXRpb246MTM2OTc=";
 
 let photos = [
   {
-    "photo": "https://via.placeholder.com/250.jpg",
-    "type": "ADDITIONAL"
-  }
-]
+    photo: "https://via.placeholder.com/250.jpg",
+    type: "ADDITIONAL",
+  },
+];
 
-
-Locations.listLocations()
-.then((response) => {
-  /*console.log(JSON.stringify(response.data));*/
-  console.log("SUCCESS listLocations");
-})
-.catch((error) => {
-  /*console.log(error);*/
-  console.log("FAILURE listLocations");
-});
-
-Locations.getAll()
+Locations.create({})
   .then((response) => {
-    /*console.log(JSON.stringify(response.data));*/
-    console.log("SUCCESS getAll");
+    console.log("SUCCESS create", response);
   })
   .catch((error) => {
     /*console.log(error);*/
-    console.log("FAILURE getALL");
+    console.log("FAILURE create", error);
+  });
+
+Locations.list()
+  .then((response) => {
+    console.log("SUCCESS listLocations", response);
+  })
+  .catch((error) => {
+    console.log("FAILURE listLocations", error);
   });
 
 Locations.getByIds(["TG9jYXRpb246MTY4MDg=", "TG9jYXRpb246MTY3NDk="])
   .then((response) => {
-    /*console.log(JSON.stringify(response.data));*/
-    console.log("SUCCESS getByIds");
+    console.log("SUCCESS getByIds", response);
   })
   .catch((error) => {
-    /*console.log(error);*/
-    console.log("FAILURE getByIds");
+    console.log("FAILURE getByIds", error);
   });
 
 Locations.search("two")
   .then((response) => {
-   /* console.log(JSON.stringify(response.data));*/
-    console.log("SUCCESS search");
+    console.log("SUCCESS search", response);
   })
   .catch((error) => {
-    /*console.log(error);*/
-    console.log("FAILURE search");
+    console.log("FAILURE search", error);
   });
 
-Locations.addPhotos(locationId,photos)
-.then((response) => {
-  /*console.log(JSON.stringify(response.data));*/
-  console.log("SUCCESS addPhoto");
-})
-.catch((error) => {
-  /*console.log(error);*/
-  console.log("FAILURE addPhoto");
+Locations.addPhotos(locationId, photos)
+  .then((response) => {
+    console.log("SUCCESS addPhoto", response);
+  })
+  .catch((error) => {
+    console.log("FAILURE addPhoto", error);
   });
 
-Locations.deletePhotos("mild",['locationId','photoIds'])
-.then((response) => {
-  /*console.log(JSON.stringify(response.data));*/
-  console.log("SUCCESS deletePhoto");
-})
-.catch((error) => {
-  console.log(error);
-  console.log("FAILURE deletePhoto");
-});
+Locations.deletePhotos("mild", ["locationId", "photoIds"])
+  .then((response) => {
+    console.log("SUCCESS deletePhoto", response);
+  })
+  .catch((error) => {
+    console.log("FAILURE deletePhoto", error);
+  });
 
 Locations.updateLocation(id)
-.then((response) => {
-  /*console.log(JSON.stringify(response.data));*/
-  console.log("SUCCESS updateLocation");
-})
-.catch((error) => {
-  console.log(error);
-  console.log("FAILURE updateLocation");
+  .then((response) => {
+    console.log("SUCCESS updateLocation", response);
+  })
+  .catch((error) => {
+    console.log("FAILURE updateLocation", error);
   });
 
 Locations.starPhotos(locationId, photoIds, starred)
-.then((response) => {
-  console.log(JSON.stringify(response.data));
-  console.log("SUCCESS startPhoto");
-})
-.catch((error) => {
-  console.log(error);
-  console.log("FAILURE startPhoto");
+  .then((response) => {
+    console.log("SUCCESS startPhoto", response);
+  })
+  .catch((error) => {
+    console.log("FAILURE startPhoto", error);
   });
 
 Locations.archiveLocation()
-.then((response) => {
-  /*console.log(JSON.stringify(response.data));*/
-  console.log("SUCCESS archiveLocation");
-})
-.catch((error) => {
-  /*console.log(error);*/
-  console.log("FAILURE archiveLocation");
+  .then((response) => {
+    console.log("SUCCESS archiveLocation", response);
+  })
+  .catch((error) => {
+    console.log("FAILURE archiveLocation", error);
   });
 
 Locations.activateLocation()
-.then((response) => {
-  /*console.log(JSON.stringify(response.data));*/
-  console.log("SUCCESS activateLocation");
-})
-.catch((error) => {
-  /*console.log(error);*/
-  console.log("FAILURE activateLocation");
+  .then((response) => {
+    console.log("SUCCESS activateLocation", response);
+  })
+  .catch((error) => {
+    console.log("FAILURE activateLocation", error);
   });
 
 Locations.subscriptions()
-.then((response) => {
-  /*console.log(JSON.stringify(response.data));*/
-  console.log("SUCCESS subscriptions");
-})
-.catch((error) => {
-  /*console.log(error);*/
-  console.log("FAILURE subscriptions");
+  .then((response) => {
+    console.log("SUCCESS subscriptions", response);
+  })
+  .catch((error) => {
+    console.log("FAILURE subscriptions", error);
   });
