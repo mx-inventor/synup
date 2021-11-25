@@ -1,7 +1,7 @@
-import { AxiosInstance } from "axios";
-import { GetAllLocationsParams, Location, Photo } from "./types/location";
+import { AxiosInstance } from 'axios';
+import { GetAllLocationsParams, Location, Photo } from './types/location';
 
-const endpoint = "locations";
+const endpoint = 'locations';
 
 export default (axios: AxiosInstance) => {
   return {
@@ -17,7 +17,7 @@ export default (axios: AxiosInstance) => {
             return reject(createLocation.error);
           }
           resolve(createLocation);
-        } catch (error) {
+        } catch (error: any) {
           reject(error.response.data || error);
         }
       });
@@ -31,7 +31,7 @@ export default (axios: AxiosInstance) => {
             },
           } = await axios.get(endpoint, { params });
           resolve(allLocations);
-        } catch (error) {
+        } catch (error: any) {
           reject(error.response.data || error);
         }
       });
@@ -43,7 +43,7 @@ export default (axios: AxiosInstance) => {
             data: {
               data: { getLocationsByIds },
             },
-          } = await axios.get("locations-by-ids", { params: { ids } });
+          } = await axios.get('locations-by-ids', { params: { ids } });
           resolve(getLocationsByIds);
         } catch (error) {
           reject(error);
@@ -57,7 +57,7 @@ export default (axios: AxiosInstance) => {
             data: {
               data: { searchLocations },
             },
-          } = await axios.get(endpoint + "/search", {
+          } = await axios.get(endpoint + '/search', {
             params: { query },
           });
           resolve(searchLocations);
@@ -171,7 +171,7 @@ export default (axios: AxiosInstance) => {
               data: { archiveLocations },
               errors,
             },
-          } = await axios.post(endpoint + "/archive", {
+          } = await axios.post(endpoint + '/archive', {
             input: { locationIds: ids },
           });
           if (errors) {
@@ -194,7 +194,7 @@ export default (axios: AxiosInstance) => {
               data: { activateLocations },
               errors,
             },
-          } = await axios.post(endpoint + "/activate", {
+          } = await axios.post(endpoint + '/activate', {
             input: { ids },
           });
           if (errors) {
@@ -216,7 +216,7 @@ export default (axios: AxiosInstance) => {
             data: {
               data: { activeSubscriptions },
             },
-          } = await axios.get("subscriptions");
+          } = await axios.get('subscriptions');
           resolve(activeSubscriptions);
         } catch (error) {
           reject(error);

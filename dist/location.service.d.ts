@@ -1,5 +1,5 @@
-import { AxiosInstance } from "axios";
-import { GetAllLocationsParams, Location, Photo } from "./types/location";
+import { AxiosInstance } from 'axios';
+import { GetAllLocationsParams, Location, Photo } from './types/location';
 declare const _default: (axios: AxiosInstance) => {
     create: (location: Location) => Promise<unknown>;
     list: (params?: GetAllLocationsParams | undefined) => Promise<unknown>;

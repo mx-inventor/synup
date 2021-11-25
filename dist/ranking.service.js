@@ -9,13 +9,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const endpoint = "locations";
+const endpoint = 'locations';
 exports.default = (axios) => {
     return {
         addKeywords: (locationId, inputKeywords) => {
             return new Promise((resolve, reject) => __awaiter(void 0, void 0, void 0, function* () {
                 try {
-                    let { data: { data: { addKeywords }, errors, }, } = yield axios.post(endpoint + "/keywords", {
+                    let { data: { data: { addKeywords }, errors, }, } = yield axios.post(endpoint + '/keywords', {
                         input: {
                             locationId,
                             inputKeywords,
@@ -40,7 +40,7 @@ exports.default = (axios) => {
         listKeywords: (locationId) => {
             return new Promise((resolve, reject) => __awaiter(void 0, void 0, void 0, function* () {
                 try {
-                    let { data: { data: { keywordsByLocationId }, errors, }, } = yield axios.get(endpoint + "/" + locationId + "/keywords");
+                    let { data: { data: { keywordsByLocationId }, errors, }, } = yield axios.get(endpoint + '/' + locationId + '/keywords');
                     if (errors) {
                         return reject(errors);
                     }
@@ -57,7 +57,7 @@ exports.default = (axios) => {
         getKeywordsPerformance: (locationId, params) => {
             return new Promise((resolve, reject) => __awaiter(void 0, void 0, void 0, function* () {
                 try {
-                    let { data: { data: { keywordsByLocationId }, errors, }, } = yield axios.get(endpoint + "/" + { locationId } + "/keywords-performance", { params });
+                    let { data: { data: { keywordsByLocationId }, errors, }, } = yield axios.get(endpoint + '/' + locationId + '/keywords-performance', { params });
                     if (errors) {
                         return reject(errors);
                     }
@@ -74,7 +74,7 @@ exports.default = (axios) => {
         archiveKeyword: (id) => {
             return new Promise((resolve, reject) => __awaiter(void 0, void 0, void 0, function* () {
                 try {
-                    let { data: { data: { archiveKeyword }, errors, }, } = yield axios.post(endpoint + "/keywords/archive", id);
+                    let { data: { data: { archiveKeyword }, errors, }, } = yield axios.post(endpoint + '/keywords/archive', id);
                     if (errors) {
                         return reject(errors);
                     }

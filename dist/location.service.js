@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const endpoint = "locations";
+const endpoint = 'locations';
 exports.default = (axios) => {
     return {
         create: (location) => {
@@ -40,7 +40,7 @@ exports.default = (axios) => {
         getByIds: (ids) => {
             return new Promise((resolve, reject) => __awaiter(void 0, void 0, void 0, function* () {
                 try {
-                    let { data: { data: { getLocationsByIds }, }, } = yield axios.get("locations-by-ids", { params: { ids } });
+                    let { data: { data: { getLocationsByIds }, }, } = yield axios.get('locations-by-ids', { params: { ids } });
                     resolve(getLocationsByIds);
                 }
                 catch (error) {
@@ -51,7 +51,7 @@ exports.default = (axios) => {
         search: (query) => {
             return new Promise((resolve, reject) => __awaiter(void 0, void 0, void 0, function* () {
                 try {
-                    let { data: { data: { searchLocations }, }, } = yield axios.get(endpoint + "/search", {
+                    let { data: { data: { searchLocations }, }, } = yield axios.get(endpoint + '/search', {
                         params: { query },
                     });
                     resolve(searchLocations);
@@ -141,7 +141,7 @@ exports.default = (axios) => {
         archiveLocation: (ids) => {
             return new Promise((resolve, reject) => __awaiter(void 0, void 0, void 0, function* () {
                 try {
-                    let { data: { data: { archiveLocations }, errors, }, } = yield axios.post(endpoint + "/archive", {
+                    let { data: { data: { archiveLocations }, errors, }, } = yield axios.post(endpoint + '/archive', {
                         input: { locationIds: ids },
                     });
                     if (errors) {
@@ -160,7 +160,7 @@ exports.default = (axios) => {
         activateLocation: (ids) => {
             return new Promise((resolve, reject) => __awaiter(void 0, void 0, void 0, function* () {
                 try {
-                    let { data: { data: { activateLocations }, errors, }, } = yield axios.post(endpoint + "/activate", {
+                    let { data: { data: { activateLocations }, errors, }, } = yield axios.post(endpoint + '/activate', {
                         input: { ids },
                     });
                     if (errors) {
@@ -179,7 +179,7 @@ exports.default = (axios) => {
         subscriptions: () => {
             return new Promise((resolve, reject) => __awaiter(void 0, void 0, void 0, function* () {
                 try {
-                    let { data: { data: { activeSubscriptions }, }, } = yield axios.get("subscriptions");
+                    let { data: { data: { activeSubscriptions }, }, } = yield axios.get('subscriptions');
                     resolve(activeSubscriptions);
                 }
                 catch (error) {

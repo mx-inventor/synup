@@ -1,5 +1,5 @@
-import { AxiosInstance } from "axios";
-import { KeywordsPermormance } from "./types/ranking";
+import { AxiosInstance } from 'axios';
+import { KeywordsPermormance } from './types/ranking';
 declare const _default: (axios: AxiosInstance) => {
     addKeywords: (locationId: string, inputKeywords: Array<string>) => Promise<unknown>;
     listKeywords: (locationId: string) => Promise<unknown>;
