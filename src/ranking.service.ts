@@ -1,7 +1,7 @@
-import { AxiosInstance } from "axios";
-import { KeywordsPermormance } from "./types/ranking";
+import { AxiosInstance } from 'axios';
+import { KeywordsPermormance } from './types/ranking';
 
-const endpoint = "locations";
+const endpoint = 'locations';
 
 export default (axios: AxiosInstance) => {
   return {
@@ -13,7 +13,7 @@ export default (axios: AxiosInstance) => {
               data: { addKeywords },
               errors,
             },
-          } = await axios.post(endpoint + "/keywords", {
+          } = await axios.post(endpoint + '/keywords', {
             input: {
               locationId,
               inputKeywords,
@@ -42,7 +42,7 @@ export default (axios: AxiosInstance) => {
               data: { keywordsByLocationId },
               errors,
             },
-          } = await axios.get(endpoint + "/" + locationId + "/keywords");
+          } = await axios.get(endpoint + '/' + locationId + '/keywords');
           if (errors) {
             return reject(errors);
           }
@@ -67,7 +67,7 @@ export default (axios: AxiosInstance) => {
               errors,
             },
           } = await axios.get(
-            endpoint + "/" + { locationId } + "/keywords-performance",
+            endpoint + '/' + locationId + '/keywords-performance',
             { params }
           );
           if (errors) {
@@ -90,7 +90,7 @@ export default (axios: AxiosInstance) => {
               data: { archiveKeyword },
               errors,
             },
-          } = await axios.post(endpoint + "/keywords/archive", id);
+          } = await axios.post(endpoint + '/keywords/archive', id);
           if (errors) {
             return reject(errors);
           }
